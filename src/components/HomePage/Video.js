@@ -5,11 +5,10 @@ import { VideoTitle } from './style';
 const MainVideo = () => {
     return (
     <>
-        <video 
-            width="320" 
-            height="240"
-            autoplay
+        <video
+            autoplay="autoplay"
             muted
+            loop
             style={{
                 objectFit: "cover",
                 width: "100vw",
@@ -17,9 +16,6 @@ const MainVideo = () => {
                 position: "fixed",
                 top: 0,
                 left: 0,
-            }}
-            file={{
-                autoplay: true
             }}
         >
             <source src={homeVideo} type="video/mp4" />
