@@ -1,6 +1,15 @@
 import React from 'react';
 import homeVideo from "../../assets/videos/homeVideo.mp4";
-import { VideoTitle } from './style';
+import hamburger from "../../assets/icons/hamburger-menu.svg";
+import { 
+    VideoTitle, 
+    TopLogo, 
+    TopMenuButton, 
+    TopMenu,
+    TopButtonsWrapper,
+    HamburgerMenu
+} from './style';
+import verticalLogo from '../../images/verticalLogo.png';
 
 const MainVideo = () => {
     return (
@@ -21,6 +30,16 @@ const MainVideo = () => {
             <source src={homeVideo} type="video/mp4" />
             Your browser does not support the video tag.
         </video>
+        <TopMenu>
+            <TopLogo src={verticalLogo} />
+            <TopButtonsWrapper>
+                <TopMenuButton>ABOUT US</TopMenuButton>
+                <TopMenuButton>CONTACT US</TopMenuButton>
+                <TopMenuButton>GIVEAWAY</TopMenuButton>
+                <TopMenuButton>LOGIN</TopMenuButton>
+            </TopButtonsWrapper>
+            <HamburgerMenu src={hamburger}/>
+        </TopMenu>
         <VideoTitle>
             Come join CDL HINT family TODAY! 
         </VideoTitle>
