@@ -22,7 +22,7 @@ const MainVideo = () => {
                 objectFit: "cover",
                 width: "100vw",
                 height: "80vh",
-                position: "fixed",
+                position: "absolute",
                 top: 0,
                 left: 0,
             }}

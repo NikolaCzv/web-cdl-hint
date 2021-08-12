@@ -18,13 +18,13 @@ export const VideoTitle = styled.h1`
     };
     @media only screen and (min-width: 769px){
         font-size: 32px;
-        left: 60px;
+        padding-left: 60px;
         bottom: 40%;
         width: 100%;
     };
     @media only screen and (min-width: 1024px){
         font-size: 44px;
-        left: 60px;
+        padding-left: 60px;
         bottom: 40%;
         width: 100%;
     }
