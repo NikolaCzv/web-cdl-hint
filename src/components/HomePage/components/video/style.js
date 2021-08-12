@@ -8,25 +8,21 @@ export const VideoTitle = styled.h1`
     font-family: ${fonts.main};
     font-weight: bold;
     color: ${colors.white};
-    width: 100%;
-    bottom: 145px;
     font-size: 44px;
     @media only screen and (max-width: 768px){
         font-size: 24px;
         bottom: 30%;
-        width: 100%;
+        padding-left: 20px;
     };
     @media only screen and (min-width: 769px){
         font-size: 32px;
-        padding-left: 60px;
+        padding-left: 20px;
         bottom: 40%;
-        width: 100%;
     };
     @media only screen and (min-width: 1024px){
         font-size: 44px;
         padding-left: 60px;
         bottom: 40%;
-        width: 100%;
     }
 `;
 
@@ -48,7 +44,7 @@ export const TopLogo = styled.img`
 export const TopMenu = styled.div`
     z-index: 2;
     position: absolute;
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -56,24 +52,18 @@ export const TopMenu = styled.div`
     top: 3%;
     padding-left: 60px;
     @media only screen and (max-width: 1170px){
-        width: 100%;
+        width: 90%;
+        padding-left: 20px;
     }
     @media only screen and (max-width: 768px){
-        padding-left: 0px;
-        width: 100%;
+        padding-left: 20px;
+        width: 90%;
     };
 `;
 
 export const TopButtonsWrapper = styled.div`
     background-color: inherit;
     border: none;
-    padding-right: 10rem;
-    @media only screen and (max-width: 768px){
-        padding-right: 2rem;
-    };
-    @media only screen and (max-width: 1170px){
-        padding-right: 4rem;
-    }
 `;
 
 export const TopMenuButton = styled.button`

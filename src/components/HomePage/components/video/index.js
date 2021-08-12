@@ -20,9 +20,8 @@ const MainVideo = () => {
             loop
             style={{
                 objectFit: "cover",
-                width: "100vw",
+                width: "100%",
                 height: "80vh",
-                position: "absolute",
                 top: 0,
                 left: 0,
             }}
