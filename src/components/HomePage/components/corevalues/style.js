@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
-    position: absolute;
     flex-direction: column;
     width: 100%;
 `;

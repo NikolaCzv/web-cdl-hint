@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { colors } from "../../../../utils/colors";
 import { fonts } from "../../../../utils/fonts";
 
-export const VideoTitle = styled.h1`
-    z-index: 2;
+export const VideoTitle = styled.div`
+    z-index: 1;
     position: absolute;
     font-family: ${fonts.main};
     font-weight: bold;
@@ -11,19 +11,28 @@ export const VideoTitle = styled.h1`
     font-size: 44px;
     @media only screen and (max-width: 768px){
         font-size: 24px;
-        bottom: 30%;
+        bottom: 20%;
         padding-left: 20px;
     };
     @media only screen and (min-width: 769px){
         font-size: 32px;
         padding-left: 20px;
-        bottom: 40%;
+        bottom: 30%;
     };
     @media only screen and (min-width: 1024px){
         font-size: 44px;
         padding-left: 60px;
-        bottom: 40%;
+        bottom: 30%;
     }
+`;
+
+export const VideoText = styled.p`
+    font-size: 24px; 
+    font-weight: normal; 
+    margin-top: 12px;
+    @media only screen and (max-width: 768px){
+        font-size: 18px;
+    };
 `;
 
 export const TopLogo = styled.img`
@@ -42,7 +51,7 @@ export const TopLogo = styled.img`
 `;
 
 export const TopMenu = styled.div`
-    z-index: 2;
+    z-index: 1;
     position: absolute;
     width: 90%;
     display: flex;
@@ -75,6 +84,9 @@ export const TopMenuButton = styled.button`
     display: inline-block;
     color: ${colors.white};
     font-family: ${fonts.main};
+    &:hover {
+        color: ${colors.subMain};
+    }
     @media only screen and (max-width: 768px){
         display: none;
     };

@@ -2,5 +2,6 @@ export const colors = {
     main: '#0074C7',
     subMain: '#8EC7A5',
     white: '#FFFFFF',
-    gray: '#F6F6F6'
+    gray: '#F6F6F6',
+    inputGray: '#C4C4C4'
 };

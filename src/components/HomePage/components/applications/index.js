@@ -3,7 +3,8 @@ import {
     TabButton, 
     Container, 
     Tab, 
-    TabContent 
+    TabContent,
+    ListText
 } from './style';
 
 const Applications = () => {
@@ -51,9 +52,10 @@ const Applications = () => {
                 </TabContent> 
             : isListTab ?
                 <TabContent id="list" class="tabcontent">
-                    <p>Company List.</p>
+                    <ListText>COMING SOON</ListText>
                 </TabContent>
             : null }
+
         </Container>
     );
 };

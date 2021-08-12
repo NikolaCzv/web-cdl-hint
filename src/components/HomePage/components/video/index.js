@@ -7,13 +7,14 @@ import {
     TopMenuButton, 
     TopMenu,
     TopButtonsWrapper,
-    HamburgerMenu
+    HamburgerMenu,
+    VideoText
 } from './style';
 import verticalLogo from '../../../../images/verticalLogo.png';
 
 const MainVideo = () => {
     return (
-    <>
+    <>  
         <video
             autoplay="autoplay"
             muted
@@ -24,6 +25,7 @@ const MainVideo = () => {
                 height: "80vh",
                 top: 0,
                 left: 0,
+                zIndex: "auto",
             }}
         >
             <source src={homeVideo} type="video/mp4" />
@@ -40,7 +42,11 @@ const MainVideo = () => {
             </TopButtonsWrapper>
         </TopMenu>
         <VideoTitle>
-            Come join CDL HINT family TODAY! 
+            Come join CDL HINT family TODAY!
+            <VideoText>
+                You are only a few click away from your dream job! 
+                We tend to be the safest bridge you will cross in your career!
+            </VideoText>
         </VideoTitle>
     </>
     )
