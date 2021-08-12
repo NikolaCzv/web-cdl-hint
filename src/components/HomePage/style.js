@@ -13,8 +13,7 @@ export const VideoTitle = styled.h1`
     font-size: 44px;
     @media only screen and (max-width: 768px){
         font-size: 24px;
-        left: 40px;
-        bottom: 40%;
+        bottom: 30%;
         width: 100%;
     };
     @media only screen and (min-width: 769px){
@@ -57,22 +56,23 @@ export const TopMenu = styled.div`
     top: 3%;
     padding-left: 60px;
     @media only screen and (max-width: 1170px){
-        width: 90%;
+        width: 100%;
     }
     @media only screen and (max-width: 768px){
-        padding-left: 40px;
+        padding-left: 0px;
+        width: 100%;
     };
 `;
 
 export const TopButtonsWrapper = styled.div`
     background-color: inherit;
     border: none;
-    padding-right: 120px;
+    padding-right: 10rem;
     @media only screen and (max-width: 768px){
-        display: none;
+        padding-right: 2rem;
     };
     @media only screen and (max-width: 1170px){
-        display: none;
+        padding-right: 4rem;
     }
 `;
 
@@ -85,6 +85,12 @@ export const TopMenuButton = styled.button`
     display: inline-block;
     color: ${colors.white};
     font-family: ${fonts.main};
+    @media only screen and (max-width: 768px){
+        display: none;
+    };
+    @media only screen and (max-width: 1170px){
+        display: none;
+    }
 `;
 
 export const HamburgerMenu = styled.img`

@@ -37,8 +37,8 @@ const MainVideo = () => {
                 <TopMenuButton>CONTACT US</TopMenuButton>
                 <TopMenuButton>GIVEAWAY</TopMenuButton>
                 <TopMenuButton>LOGIN</TopMenuButton>
+                <HamburgerMenu src={hamburger}/>
             </TopButtonsWrapper>
-            <HamburgerMenu src={hamburger}/>
         </TopMenu>
         <VideoTitle>
             Come join CDL HINT family TODAY! 
