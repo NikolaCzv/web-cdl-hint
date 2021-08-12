@@ -1,6 +1,6 @@
 import React from 'react';
-import homeVideo from "../../assets/videos/homeVideo.mp4";
-import hamburger from "../../assets/icons/hamburger-menu.svg";
+import homeVideo from "../../../../assets/videos/homeVideo.mp4";
+import hamburger from "../../../../assets/icons/hamburger-menu.svg";
 import { 
     VideoTitle, 
     TopLogo, 
@@ -9,7 +9,7 @@ import {
     TopButtonsWrapper,
     HamburgerMenu
 } from './style';
-import verticalLogo from '../../images/verticalLogo.png';
+import verticalLogo from '../../../../images/verticalLogo.png';
 
 const MainVideo = () => {
     return (

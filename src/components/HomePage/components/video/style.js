@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { colors } from "../../utils/colors";
-import { fonts } from "../../utils/fonts";
+import { colors } from "../../../../utils/colors";
+import { fonts } from "../../../../utils/fonts";
 
 export const VideoTitle = styled.h1`
     z-index: 2;

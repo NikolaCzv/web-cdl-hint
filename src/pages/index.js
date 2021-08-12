@@ -1,5 +1,5 @@
 import * as React from "react";
-import MainVideo from "../components/HomePage/Video.js";
+import MainVideo from "../components/HomePage/components/video";
 
 
 const HomePage = () => (
