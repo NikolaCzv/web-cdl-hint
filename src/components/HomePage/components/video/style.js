@@ -36,6 +36,7 @@ export const VideoText = styled.p`
 `;
 
 export const TopLogo = styled.img`
+    cursor: pointer;
     @media only screen and (max-width: 768px){
         width: 160px;
         height: 50px;
@@ -58,7 +59,7 @@ export const TopMenu = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    top: 3%;
+    top: 6%;
     padding-left: 60px;
     @media only screen and (max-width: 1170px){
         width: 90%;
