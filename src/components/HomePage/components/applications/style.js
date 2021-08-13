@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { colors } from "../../../../utils/colors";
 import { fonts } from "../../../../utils/fonts";
+import { Input } from 'antd';
 
 export const Container = styled.div`
-    background-color: ${colors.gray};
-    height: 75vh;
-    width: 100%;
+    background-color: ${colors.grayBackground};
+    height: 70vh;
     padding: 80px 64px 32px 80px;
 `;
 
@@ -30,17 +30,16 @@ export const TabButton = styled.button`
 `;
 
 export const Tab = styled.div`
-    overflow: hidden;
     width: auto;
 `;
 
 export const TabContent = styled.div`
-    padding: 6px 12px;
-    height: 60vh;
-    width: 90%;
+    height: 50vh;
+    width: 100%;
     background-color: ${colors.white};
     border-top: none;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 `;
@@ -50,4 +49,45 @@ export const ListText = styled.div`
     background: -webkit-linear-gradient(${colors.main}, ${colors.subMain});
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+`;
+
+export const Form = styled.div`
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px;
+`;
+
+export const InputFieldWrapper = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const InputField = styled(Input)`
+    font-family: ${fonts.main};
+    margin-bottom: 1.5rem;
+    width: 80%;
+`;
+
+export const ApplyButton = styled.button`
+    background-color: inherit;
+    display: inline-block;
+    font-family: ${fonts.main};
+    border-color: ${colors.main};
+    border-width: thin;
+    border-radius: 2px;
+    color: ${colors.main};
+    cursor: pointer;
+    width: 10.5rem;
+    height: 2rem;
+    margin-top: 40px;
+
+    &:hover {
+        background-color: ${colors.main};
+        color: ${colors.white};
+    }
 `;
