@@ -5,11 +5,14 @@ export const Container = styled.div`
     flex-direction: column;
     width: 100%;
 `;
-export const ContentWrapper = styled.div`
+export const CardWrapper = styled.div`
     display: flex;
     flex-direction: column
 `;
-export const Content = styled.div`
+export const Card = styled.div`
     flex-direction: row;
     display: flex;
-`
+`;
+export const CardImg = styled.img`
+
+` 

@@ -1,7 +1,7 @@
 import * as React from "react";
 
 const SecondPage = () => (
-  <div>Second Page</div>
+  <div>Page 2</div>
 );
 
 export default SecondPage;

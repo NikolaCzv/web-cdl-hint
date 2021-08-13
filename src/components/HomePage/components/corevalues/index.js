@@ -1,10 +1,15 @@
 import React from 'react';
-import { Container, Content, ContentWrapper } from './style';
+import { Container, Card, CardWrapper, CardImg } from './style';
 
 const CoreValues = () => {
     return (
         <Container>
+            <CardWrapper>
+                <CardImg src=''/>
+                <Card>
             <h1>core values</h1>
+                </Card>
+            </CardWrapper>
         </Container>
     );
 };
