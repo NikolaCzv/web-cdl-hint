@@ -71,7 +71,7 @@ export const Form = styled.div`
     @media only screen and (max-width: 768px){
         height: 45vh;
         flex-direction: column;
-        justify-content: center
+        justify-content: center;
     };
 `;
 

@@ -1,5 +1,13 @@
 import React from 'react';
-import { BottomLogo, Container, FollowSub, MediaWrapper, Media, FooterButtonWrapper, FooterButton, Copyright } from './style';
+import { 
+    BottomLogo, 
+    Container, 
+    FollowSub, 
+    MediaWrapper, 
+    Media, 
+    FooterButton, 
+    Copyright 
+    } from './style';
 import verticalLogo from '../../../../images/verticalLogo.png';
 import Facebook from '../../../../assets/icons/fb.png';
 import Instagram from '../../../../assets/icons/insta.png';
@@ -19,7 +27,7 @@ const Footer = () => {
                 <Media src={Twitter}/>
                 <Media src={Youtube} />
             </MediaWrapper>
-            <FooterButtonWrapper>
+            <div>
                 <FooterButton>
                     ABOUT US
                 </FooterButton>
@@ -32,7 +40,7 @@ const Footer = () => {
                 <FooterButton>
                     CONTACT US
                 </FooterButton>
-            </FooterButtonWrapper>
+            </div>
             <Copyright>Copyright 2021. All Rights Reserved.</Copyright>
         </Container>
     )

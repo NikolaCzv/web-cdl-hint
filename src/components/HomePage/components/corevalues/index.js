@@ -13,9 +13,9 @@ import {
 import WeAreCdl from '../../../../images/weAreCdl.jpg';
 import Trust from '../../../../images/trust.png';
 import Care from '../../../../images/care.png';
-import CareIco from '../../../../assets/icons/careIco.png'
-import TrustIco from '../../../../assets/icons/trustIco.png'
-import WeAreCdlIco from '../../../../assets/icons/weAreCdlIco.png'
+import CareIco from '../../../../assets/icons/careIco.png';
+import TrustIco from '../../../../assets/icons/trustIco.png';
+import WeAreCdlIco from '../../../../assets/icons/weAreCdlIco.png';
 
 const CoreValues = () => {
     return (

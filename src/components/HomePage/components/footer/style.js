@@ -18,23 +18,23 @@ export const Container = styled.div`
 export const BottomLogo = styled.img`
     margin-top: 15px;
     @media only screen and (max-width: 768px){
-    width: 160px;
-    height: 50px;
+        width: 160px;
+        height: 50px;
     };
     @media only screen and (min-width: 769px){
-    width: 250px;
-    height: 70px;
+        width: 250px;
+        height: 70px;
     };
     @media only screen and (min-width: 1024px){
-    width: 270px;
-    height: 80px;
-    }
+        width: 270px;
+        height: 80px;
+    };
 `;
 
 export const FollowSub = styled.h2`
-    color: #FFFFFF
+    color: #FFFFFF;
+`;
 
-`
 export const MediaWrapper = styled.div`
     text-align: -webkit-center;
     display: flex;
@@ -45,7 +45,8 @@ export const MediaWrapper = styled.div`
         flex-direction: column;
         align-items: center;
     };
-`
+`;
+
 export const Media = styled.img`
 @media only screen and (max-width: 768px){
     height: 30px;
@@ -53,10 +54,8 @@ export const Media = styled.img`
     margin-bottom: 15px;
     margin-right: 0px;
 };
-`
-export const FooterButtonWrapper = styled.div`
+`;
 
-`
 export const FooterButton = styled.button`
     border: none;
     background-color: inherit;
@@ -80,6 +79,6 @@ export const FooterButton = styled.button`
 export const Copyright = styled.h4`
     color: ${colors.white};
     font-family: ${fonts.main};
-`
+`;
 
 
