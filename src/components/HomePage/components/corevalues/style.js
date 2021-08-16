@@ -25,6 +25,9 @@ export const Card = styled.div`
         flex-direction: column;
         height: 90vh;
     };
+    @media only screen and (min-width: 769px){
+        overflow: hidden;
+    };
 `;
 
 export const Image = styled.img`
@@ -70,7 +73,9 @@ export const CardTitle = styled.h1`
     @media only screen and (max-width: 768px){
         font-size: 24px;
     };
-
+    @media only screen and (min-width: 769px){
+        font-size: 32px;
+    };
 `;
 
 export const CardSub = styled.div`
@@ -78,8 +83,11 @@ export const CardSub = styled.div`
     width: 65%;
     font-family: ${fonts.main};
     @media only screen and (max-width: 768px){
-        font-size: 28px;
+        font-size: 18px;
         width: auto;
+    };
+    @media only screen and (min-width: 769px){
+        font-size: 20px;
     };
 `;
 

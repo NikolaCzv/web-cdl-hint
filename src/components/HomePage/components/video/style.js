@@ -38,7 +38,8 @@ export const VideoText = styled.p`
 export const TopLogo = styled.img`
     cursor: pointer;
     @media only screen and (max-width: 768px){
-        margin-top: 10px;
+        margin-top: 20px;
+        margin-left: 20px;
         width: 160px;
         height: 50px;
     };
@@ -67,8 +68,8 @@ export const TopMenu = styled.div`
         padding-left: 20px;
     }
     @media only screen and (max-width: 768px){
-        padding-left: 20px;
-        width: 90%;
+        padding-left: 0px;
+        width: 95%;
     };
 `;
 
@@ -103,5 +104,6 @@ export const HamburgerMenu = styled.img`
     @media only screen and (max-width: 1170px){
         display: block;
         color: ${colors.white};
+        margin-top: 5px;
     }
 `;

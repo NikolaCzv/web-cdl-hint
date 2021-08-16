@@ -2,8 +2,11 @@ import React from 'react';
 import { 
     Container, 
     TextHolder,
-    ApplyToday
+    ApplyToday,
+    PhoneHolder,
+    IconHolder
 } from './style';
+import phoneIcon from '../../../../assets/icons/phone.png';
 
 const TopBanner = () => {
     return (
@@ -15,7 +18,10 @@ const TopBanner = () => {
                 </ApplyToday>
             </TextHolder>
             <TextHolder>
-                +1(123)456-7890
+                <PhoneHolder>
+                    +1(123)456-7890
+                </PhoneHolder>
+                <IconHolder src={phoneIcon}/>
             </TextHolder>
         </Container>
     );

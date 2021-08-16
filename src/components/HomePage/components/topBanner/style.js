@@ -12,8 +12,9 @@ export const Container = styled.div`
     padding-left: 64px;
     padding-right: 64px;
     @media only screen and (max-width: 768px){
-        padding-left: 5px;
+        padding-left: 20px;
         padding-right: 5px;
+        height: 55px;
     };
 `;
 
@@ -22,7 +23,24 @@ export const TextHolder = styled.div`
     font-family: ${fonts.main};
     font-size: 16px;
     @media only screen and (max-width: 768px){
-        font-size: 12px;
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+    };
+`;
+
+export const PhoneHolder = styled.div`
+    @media only screen and (max-width: 768px){
+        display: none;
+    };
+`;
+
+export const IconHolder = styled.img`
+    display: none;
+    @media only screen and (max-width: 768px){
+        display: block;
+        width: 50%;
+        height: 50%;
     };
 `;
 
