@@ -10,7 +10,7 @@ export const Container = styled.div`
     justify-content: space-evenly;
     align-items: center;
     @media only screen and (max-width: 768px){
-        height: 300vh;
+        height: 240vh;
     };
 `;
 
@@ -23,7 +23,24 @@ export const Card = styled.div`
     @media only screen and (max-width: 768px){
         overflow: hidden;
         flex-direction: column;
-        height: 90vh;
+        height: 75vh;
+    };
+    @media only screen and (min-width: 769px){
+        overflow: hidden;
+    };
+`;
+
+export const MiddleCard = styled.div`
+    display: flex;
+    flex-direction: row;
+    height: 30%;
+    background-color: ${colors.grayBackground};
+    width: 90%;
+    @media only screen and (max-width: 768px){
+        overflow: hidden;
+        flex-direction: column;
+        height: 75vh;
+        flex-direction: column-reverse;
     };
     @media only screen and (min-width: 769px){
         overflow: hidden;
@@ -35,7 +52,7 @@ export const Image = styled.img`
     height: 100%;
     @media only screen and (max-width: 768px){
         width: 100%;
-        height: 45vh;
+        height: 37.5vh;
     };
 `;
 
@@ -47,7 +64,7 @@ export const Content = styled.div`
     height: 100%;
     @media only screen and (max-width: 768px){
         width: 100%;
-        height: 45vh;
+        height: 37.5vh;
     };
 `;
 
@@ -63,6 +80,7 @@ export const ContentAlt = styled.div`
         padding-left: 20px;
         width: 100%;
         height: 40vh;
+        justify-content: center;
     };
 `;
 
@@ -93,6 +111,10 @@ export const CardSub = styled.div`
 
 export const Icon = styled.img`
     width: 12%;
-    height: 15%;   
+    height: 15%;
+    @media only screen and (max-width: 768px){
+        margin-bottom: 20px
+    };
+   
 `;
 

@@ -37,6 +37,9 @@ export const BottomLogo = styled.img`
 export const FollowSub = styled.h2`
     color: ${colors.white};
     font-family: ${fonts.main};
+    @media only screen and (max-width: 768px){
+        font-size: 18px;
+    };
 `;
 
 export const MediaWrapper = styled.div`

@@ -117,5 +117,9 @@ export const ApplyButton = styled.button`
         background-color: ${colors.main};
         color: ${colors.white};
     }
-
+    @media only screen and (max-width: 768px){
+        height: 44px;
+        width: 180px;
+        font-size: 16px;
+    };
 `;

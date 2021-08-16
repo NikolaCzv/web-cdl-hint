@@ -12,7 +12,7 @@ const TopBanner = () => {
     return (
         <Container>
             <TextHolder>
-                We collaborate with hundreds of companies all over U.S! {" "}
+                We collaborate with hundreds of companies all over the U.S! {" "}
                 <ApplyToday href="#applications"> 
                     APPLY NOW! 
                 </ApplyToday>

@@ -7,7 +7,8 @@ import {
     CardTitle,
     CardSub,
     ContentAlt,
-    Icon
+    Icon,
+    MiddleCard
 } from './style';
 
 import WeAreCdl from '../../../../images/weAreCdl.jpg';
@@ -37,7 +38,7 @@ const CoreValues = () => {
                     </CardSub>
                 </ContentAlt>
             </Card>
-            <Card>
+            <MiddleCard>
                 <ContentAlt>
                     <Icon src={TrustIco}/>
                     <CardTitle>
@@ -53,7 +54,7 @@ const CoreValues = () => {
                 <Content>
                     <Image src={Trust} />
                 </Content>
-            </Card>
+            </MiddleCard>
             <Card>
                 <Content>
                     <Image src={Care}/>
