@@ -7,6 +7,9 @@ export const Container = styled.div`
     background-color: ${colors.grayBackground};
     height: 70vh;
     padding: 80px 64px 32px 80px;
+    @media only screen and (max-width: 768px){
+        height: 96vh;
+    };
 `;
 
 export const TabButton = styled.button`
@@ -27,6 +30,10 @@ export const TabButton = styled.button`
         background-color: ${colors.main};
         color: ${colors.white};
     }
+    @media only screen and (max-width: 768px){
+        display: flex;
+        flex-direction: column;
+    };
 `;
 
 export const Tab = styled.div`
@@ -42,6 +49,10 @@ export const TabContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media only screen and (max-width: 768px){
+        height: 70vh;
+        flex-direction: column;
+    };
 `;
 
 export const ListText = styled.div`
@@ -57,6 +68,11 @@ export const Form = styled.div`
     flex-direction: row;
     justify-content: space-between;
     padding: 0px;
+    @media only screen and (max-width: 768px){
+        height: 45vh;
+        flex-direction: column;
+        justify-content: center;
+    };
 `;
 
 export const InputFieldWrapper = styled.div`
@@ -65,6 +81,7 @@ export const InputFieldWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 `;
 
 export const InputField = styled(Input)`
@@ -90,4 +107,5 @@ export const ApplyButton = styled.button`
         background-color: ${colors.main};
         color: ${colors.white};
     }
+
 `;
