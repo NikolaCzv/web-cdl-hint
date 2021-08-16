@@ -11,12 +11,19 @@ export const Container = styled.div`
     align-items: center;
     padding-left: 64px;
     padding-right: 64px;
+    @media only screen and (max-width: 768px){
+        padding-left: 5px;
+        padding-right: 5px;
+    };
 `;
 
 export const TextHolder = styled.div`
     color: ${colors.white};
     font-family: ${fonts.main};
     font-size: 16px;
+    @media only screen and (max-width: 768px){
+        font-size: 12px;
+    };
 `;
 
 export const ApplyToday = styled.a`

@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 import { colors } from '../../../../utils/colors';
 import { fonts } from '../../../../utils/fonts';
-import FooterWallpaper from '../../../../images/footerwp.jpg';
+import footerWallpaper from '../../../../images/footerwp.png';
 
 export const Container = styled.div`
     display: flex;
-    Width: 100%;
+    width: 100%;
     height: 50vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     justify-content: space-between;
-    background-image: ${FooterWallpaper};
-    background-color: black;
+    background-image: url(${footerWallpaper});
 `;
 
 export const BottomLogo = styled.img`
@@ -48,12 +47,12 @@ export const MediaWrapper = styled.div`
 `;
 
 export const Media = styled.img`
-@media only screen and (max-width: 768px){
-    height: 30px;
-    width: 30px;
-    margin-bottom: 15px;
-    margin-right: 0px;
-};
+    @media only screen and (max-width: 768px){
+        height: 30px;
+        width: 30px;
+        margin-bottom: 15px;
+        margin-right: 0px;
+    };
 `;
 
 export const FooterButton = styled.button`

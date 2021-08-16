@@ -11,11 +11,11 @@ const TopBanner = () => {
             <TextHolder>
                 We collaborate with hundreds of companies all over U.S! {" "}
                 <ApplyToday href="#applications"> 
-                    APPLY TODAY! 
+                    APPLY NOW! 
                 </ApplyToday>
             </TextHolder>
             <TextHolder>
-                Our phone +1(123)456-7890
+                +1(123)456-7890
             </TextHolder>
         </Container>
     );

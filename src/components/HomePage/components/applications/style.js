@@ -8,7 +8,11 @@ export const Container = styled.div`
     height: 70vh;
     padding: 80px 64px 32px 80px;
     @media only screen and (max-width: 768px){
-        height: 96vh;
+        height: 100vh;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     };
 `;
 
@@ -33,11 +37,17 @@ export const TabButton = styled.button`
     @media only screen and (max-width: 768px){
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     };
 `;
 
 export const Tab = styled.div`
     width: auto;
+    @media only screen and (max-width: 768px){
+        display: flex;
+        flex-direction: column;
+    };
 `;
 
 export const TabContent = styled.div`

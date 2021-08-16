@@ -14,10 +14,11 @@ export const Container = styled.div`
 export const Card = styled.div`
     display: flex;
     flex-direction: row;
-    height: 55vh;
+    height: 30%;
     background-color: ${colors.grayBackground};
     width: 90%;
     @media only screen and (max-width: 768px){
+        overflow: hidden;
         flex-direction: column;
     };
 `;
@@ -25,6 +26,10 @@ export const Card = styled.div`
 export const Image = styled.img`
     width: 100%;
     height: 100%;
+    @media only screen and (max-width: 768px){
+        width: 30vh;
+        height: 30vh;
+    };
 `;
 
 export const Content = styled.div`

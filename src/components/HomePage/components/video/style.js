@@ -11,13 +11,13 @@ export const VideoTitle = styled.div`
     font-size: 44px;
     @media only screen and (max-width: 768px){
         font-size: 24px;
-        bottom: 20%;
+        bottom: 10%;
         padding-left: 20px;
     };
     @media only screen and (min-width: 769px){
         font-size: 32px;
         padding-left: 20px;
-        bottom: 30%;
+        bottom: 20%;
     };
     @media only screen and (min-width: 1024px){
         font-size: 44px;
@@ -38,6 +38,7 @@ export const VideoText = styled.p`
 export const TopLogo = styled.img`
     cursor: pointer;
     @media only screen and (max-width: 768px){
+        margin-top: 10px;
         width: 160px;
         height: 50px;
     };
