@@ -6,12 +6,16 @@ import footerWallpaper from '../../../../images/footerwp.png';
 export const Container = styled.div`
     display: flex;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    background-image: url(${footerWallpaper});
+    justify-content: space-evenly;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${footerWallpaper});
+    background-size: cover;
+    @media only screen and (max-width: 768px){
+        height: 30vh;
+    };
 `;
 
 export const BottomLogo = styled.img`
@@ -31,7 +35,8 @@ export const BottomLogo = styled.img`
 `;
 
 export const FollowSub = styled.h2`
-    color: #FFFFFF;
+    color: ${colors.white};
+    font-family: ${fonts.main};
 `;
 
 export const MediaWrapper = styled.div`
@@ -39,11 +44,7 @@ export const MediaWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 40%;
-    @media only screen and (max-width: 768px){
-        flex-direction: column;
-        align-items: center;
-    };
+    width: 20%;
 `;
 
 export const Media = styled.img`

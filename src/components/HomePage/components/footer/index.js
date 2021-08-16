@@ -9,23 +9,21 @@ import {
     Copyright 
     } from './style';
 import verticalLogo from '../../../../images/verticalLogo.png';
-import Facebook from '../../../../assets/icons/fb.png';
-import Instagram from '../../../../assets/icons/insta.png';
-import Twitter from '../../../../assets/icons/twitter.png';
-import Youtube from '../../../../assets/icons/youtube.png';
+import facebook from '../../../../assets/icons/facebook.svg';
+import instagram from '../../../../assets/icons/instagram.svg';
+import linkedin from '../../../../assets/icons/linkedin.svg';
 
 const Footer = () => {
     return(
         <Container>
             <BottomLogo src={verticalLogo}/>
             <FollowSub>
-                Subscribe and Follow!
+                SUBSCRIBE AND FOLLOW
             </FollowSub>
             <MediaWrapper>
-                <Media src={Facebook}/>
-                <Media src={Instagram}/>
-                <Media src={Twitter}/>
-                <Media src={Youtube} />
+                <Media src={facebook}/>
+                <Media src={instagram}/>
+                <Media src={linkedin}/>
             </MediaWrapper>
             <div>
                 <FooterButton>
