@@ -149,3 +149,9 @@ export const ApplyButton = styled.button`
         margin-top: 20px;
     };
 `;
+
+export const CompanyInputField = styled(Input)`
+font-family: ${fonts.main};
+margin-bottom: 1.5rem;
+width: 50%;
+`;

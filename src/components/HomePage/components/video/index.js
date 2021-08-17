@@ -11,8 +11,14 @@ import {
     VideoText
 } from './style';
 import verticalLogo from '../../../../images/verticalLogo.png';
+import { navigate } from 'gatsby' 
 
 const MainVideo = () => {
+
+    const returnHome = () => {
+        navigate('/');
+    };
+
     return (
     <>  
         <video
@@ -28,11 +34,11 @@ const MainVideo = () => {
                 zIndex: "auto",
             }}
         >
-            <source src={homeVideo} type="video/mp4" />
+            <source src={homeVideo} type="video/mp4"/>
             Your browser does not support the video tag.
         </video>
         <TopMenu>
-            <TopLogo src={verticalLogo} />
+            <TopLogo src={verticalLogo} onClick={() => returnHome()}/>
             <TopButtonsWrapper>
                 <TopMenuButton>ABOUT US</TopMenuButton>
                 <TopMenuButton>CONTACT US</TopMenuButton>

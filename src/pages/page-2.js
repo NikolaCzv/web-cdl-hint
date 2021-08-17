@@ -1,7 +1,7 @@
 import * as React from "react";
 
-const SecondPage = () => (
-  <div>Page 2</div>
+const ContactUs = () => (
+  <div>contact us</div>
 );
 
-export default SecondPage;
+export default ContactUs;

@@ -8,7 +8,8 @@ import {
     Form,
     InputFieldWrapper,
     InputField,
-    ApplyButton
+    ApplyButton,
+    CompanyInputField
 } from './style';
 import { Select } from 'antd';
 import { fonts } from '../../../../utils/fonts';
@@ -116,7 +117,15 @@ const Applications = () => {
                 </TabContent>
             : isCompanyTab ? 
                 <TabContent id="company" class="tabcontent">
-                    <p>Company application.</p>
+                    <Form>
+                        <InputFieldWrapper>
+                            <CompanyInputField placeholder="Company Name"/>
+                            <CompanyInputField placeholder="Email Address"/>
+                            <CompanyInputField placeholder="Phone Number"/>
+                            <CompanyInputField placeholder="DOT number"/>
+                        </InputFieldWrapper>
+                    </Form>
+                    <ApplyButton>REQUEST</ApplyButton>
                 </TabContent> 
             : isListTab ?
                 <TabContent id="list" class="tabcontent">
