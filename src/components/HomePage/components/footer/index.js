@@ -18,7 +18,7 @@ const Footer = () => {
         <Container>
             <BottomLogo src={verticalLogo}/>
             <FollowSub>
-                SUBSCRIBE AND FOLLOW
+                FOLLOW US ON SOCIAL MEDIA
             </FollowSub>
             <MediaWrapper>
                 <Media src={facebook}/>
