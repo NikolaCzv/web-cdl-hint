@@ -19,6 +19,22 @@ const MainVideo = () => {
         navigate('/');
     };
 
+    const handleAboutUs = () => {
+        navigate('/about-us');
+    };
+
+    const handleContactUs = () => {
+        navigate('/contact-us');
+    };
+
+    const handleGiveaway = () => {
+        navigate('/giveaway');
+    };
+
+    const handleLogin = () => {
+        navigate('/');
+    };
+
     return (
     <>  
         <video
@@ -40,10 +56,10 @@ const MainVideo = () => {
         <TopMenu>
             <TopLogo src={verticalLogo} onClick={() => returnHome()}/>
             <TopButtonsWrapper>
-                <TopMenuButton>ABOUT US</TopMenuButton>
-                <TopMenuButton>CONTACT US</TopMenuButton>
-                <TopMenuButton>GIVEAWAY</TopMenuButton>
-                <TopMenuButton>LOGIN</TopMenuButton>
+                <TopMenuButton onClick={() => handleAboutUs()}>ABOUT US</TopMenuButton>
+                <TopMenuButton onClick={() => handleContactUs()}>CONTACT US</TopMenuButton>
+                <TopMenuButton onClick={() => handleGiveaway()}>GIVEAWAY</TopMenuButton>
+                <TopMenuButton onClick={() => handleLogin()}>LOGIN</TopMenuButton>
                 <HamburgerMenu src={hamburger}/>
             </TopButtonsWrapper>
         </TopMenu>
