@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { colors } from "../../../../utils/colors";
 import { fonts } from "../../../../utils/fonts";
 
+//Iphone 5/SE @media screen and (device-aspect-ratio: 40/71)
+//Iphone 6 (device-aspect-ratio: 375/667)
+
 export const VideoTitle = styled.div`
     z-index: 1;
     position: absolute;
@@ -9,11 +12,16 @@ export const VideoTitle = styled.div`
     font-weight: bold;
     color: ${colors.white};
     font-size: 44px;
-    @media only screen and (max-width: 768px){
+    @media screen and (device-aspect-ratio: 40/71){
         font-size: 24px;
         bottom: 10%;
-        padding-left: 20px;
+        padding-left: 1.25rem;
     };
+    @media screen and (device-aspect-ratio: 375/667){
+        font-size: 20px;
+        bottom: 6%;
+        padding-left: 1.25rem;
+    }
     @media only screen and (min-width: 769px){
         font-size: 32px;
         padding-left: 20px;
@@ -25,24 +33,39 @@ export const VideoTitle = styled.div`
         bottom: 30%;
     }
 `;
+// @media only screen and (max-width: 768px){
+//     font-size: 24px;
+//     bottom: 10%;
+//     padding-left: 20px;
+// };
 
 export const VideoText = styled.p`
     font-size: 24px; 
     font-weight: normal; 
     margin-top: 12px;
-    @media only screen and (max-width: 768px){
-        font-size: 18px;
-    };
-`;
+    @media screen and (device-aspect-ratio: 40/71) {
+        font-size: 16px;
+    }
+    @media screen and (device-aspect-ratio: 375/667) {
+        font-size: 16px;
+    }
+    `;
+    // @media only screen and (max-width: 768px){
+    //     font-size: 18px;
+    // };
 
 export const TopLogo = styled.img`
     cursor: pointer;
-    @media only screen and (max-width: 768px){
-        margin-top: 20px;
-        margin-left: 20px;
-        width: 160px;
-        height: 50px;
-    };
+    @media screen and (device-aspect-ratio: 40/71) {
+        margin-top: 1.75rem;
+        margin-left: 1.25rem;
+        width: 10rem;
+    }
+    @media screen and (device-aspect-ratio: 375/667) {
+        margin-top: 1.75rem;
+        margin-left: 1.25rem;
+        width: 10rem;
+    }
     @media only screen and (min-width: 769px){
         width: 250px;
         height: 70px;
@@ -52,6 +75,12 @@ export const TopLogo = styled.img`
         height: 80px;
     }
 `;
+// @media only screen and (max-width: 768px){
+//     margin-top: 20px;
+//     margin-left: 20px;
+//     width: 160px;
+//     height: 50px;
+// };
 
 export const TopMenu = styled.div`
     z-index: 1;

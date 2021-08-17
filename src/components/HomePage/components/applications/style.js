@@ -3,16 +3,20 @@ import { colors } from "../../../../utils/colors";
 import { fonts } from "../../../../utils/fonts";
 import { Input } from 'antd';
 
+//Iphone 5/SE @media screen and (device-aspect-ratio: 40/71)
+//Iphone 6 (device-aspect-ratio: 375/667)
+
 export const Container = styled.div`
     background-color: ${colors.grayBackground};
     height: 70vh;
     padding: 80px 64px 32px 80px;
-    @media only screen and (max-width: 768px){
-        height: 85vh;
-        padding: 0px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    @media screen and (device-aspect-ratio: 40/71){
+        height: 120vh;
+        padding: 0rem;
+    };
+    @media screen and (device-aspect-ratio: 375/667){
+        height: 120vh;
+        padding: 0rem;
     };
 `;
 
@@ -34,7 +38,13 @@ export const TabButton = styled.button`
         background-color: ${colors.main};
         color: ${colors.white};
     }
-    @media only screen and (max-width: 768px){
+    @media screen and (device-aspect-ratio: 40/71){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    };
+    @media screen and (device-aspect-ratio: 375/667){
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -44,7 +54,11 @@ export const TabButton = styled.button`
 
 export const Tab = styled.div`
     width: auto;
-    @media only screen and (max-width: 768px){
+    @media screen and (device-aspect-ratio: 40/71){
+        display: flex;
+        flex-direction: column;
+    };
+    @media screen and (device-aspect-ratio: 375/667){
         display: flex;
         flex-direction: column;
     };
@@ -59,9 +73,14 @@ export const TabContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    @media only screen and (max-width: 768px){
-        height: 70vh;
-        flex-direction: column;
+    @media screen and (device-aspect-ratio: 40/71){
+        padding-top: 1.5rem;
+        height: auto;
+    };
+    @media screen and (device-aspect-ratio: 375/667){
+        padding-top: 1.5rem;
+        height: auto;
+        padding-bottom: 2rem;
     };
 `;
 
@@ -78,8 +97,11 @@ export const Form = styled.div`
     flex-direction: row;
     justify-content: space-between;
     padding: 0px;
-    @media only screen and (max-width: 768px){
-        height: 45vh;
+    @media screen and (device-aspect-ratio: 40/71){
+        flex-direction: column;
+        justify-content: center;
+    };
+    @media screen and (device-aspect-ratio: 375/667){
         flex-direction: column;
         justify-content: center;
     };
@@ -91,7 +113,6 @@ export const InputFieldWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 `;
 
 export const InputField = styled(Input)`
@@ -117,9 +138,14 @@ export const ApplyButton = styled.button`
         background-color: ${colors.main};
         color: ${colors.white};
     }
-    @media only screen and (max-width: 768px){
-        height: 44px;
-        width: 180px;
+    @media screen and (device-aspect-ratio: 40/71){
+        width: 11.25rem;
         font-size: 16px;
+        margin-top: 20px;
+    };
+    @media screen and (device-aspect-ratio: 375/667){
+        width: 11.25rem;
+        font-size: 16px;
+        margin-top: 20px;
     };
 `;
