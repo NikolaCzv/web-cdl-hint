@@ -12,7 +12,7 @@ const AboutUs = () => {
             <AboutUsBottom />
             <Footer />
         </div>
-    )
+    );
 };
 
 export default AboutUs;

@@ -21,7 +21,6 @@ export const TopMenu = styled.div`
 `;
 
 export const TopMenuButton = styled.button`
-    
     border: none;
     background-color: inherit;
     padding: 14px 28px;

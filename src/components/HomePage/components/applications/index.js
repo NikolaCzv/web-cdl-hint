@@ -65,7 +65,7 @@ const Applications = () => {
                             <InputField placeholder="First Name"/>
                             <InputField placeholder="Last Name"/>
                             <InputField placeholder="Email Address"/>
-                            <InputField placeholder="Phone number"/>
+                            <InputField placeholder="Phone Number"/>
                         </InputFieldWrapper>
                         <InputFieldWrapper>
                             <Select 
@@ -122,7 +122,7 @@ const Applications = () => {
                             <CompanyInputField placeholder="Company Name"/>
                             <CompanyInputField placeholder="Email Address"/>
                             <CompanyInputField placeholder="Phone Number"/>
-                            <CompanyInputField placeholder="DOT number"/>
+                            <CompanyInputField placeholder="DOT Number"/>
                         </InputFieldWrapper>
                     </Form>
                     <ApplyButton>REQUEST</ApplyButton>

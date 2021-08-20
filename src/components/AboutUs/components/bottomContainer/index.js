@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextWrapper, MainText, SubText } from './style'
+import { TextWrapper, MainText, SubText } from './style';
 
 const AboutUsBottom = () => {
     return(
@@ -13,7 +13,7 @@ const AboutUsBottom = () => {
             to help drivers find a right path in their professional career. 
         </SubText>
     </TextWrapper>
-    )
+    );
 };
 
 export default AboutUsBottom;

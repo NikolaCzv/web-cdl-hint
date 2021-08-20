@@ -11,28 +11,27 @@ import {
     VideoText
 } from './style';
 import verticalLogo from '../../../../images/verticalLogo.png';
-import { navigate } from 'gatsby' 
+import { navigate } from 'gatsby';
 
 const MainVideo = () => {
 
-    const returnHome = () => {
+    const returnNav = () => {
         navigate('/');
-    };
-
-    const handleAboutUs = () => {
-        navigate('/about-us');
-    };
-
-    const handleContactUs = () => {
-        navigate('/contact-us');
-    };
-
-    const handleGiveaway = () => {
-        navigate('/giveaway');
-    };
-
-    const handleLogin = () => {
-        navigate('/');
+        const handleAboutUs = () => {
+            navigate('/about-us');
+        };
+    
+        const handleContactUs = () => {
+            navigate('/contact-us');
+        };
+    
+        const handleGiveaway = () => {
+            navigate('/giveaway');
+        };
+    
+        const handleLogin = () => {
+            navigate('/');
+        };
     };
 
     return (
@@ -54,12 +53,12 @@ const MainVideo = () => {
             Your browser does not support the video tag.
         </video>
         <TopMenu>
-            <TopLogo src={verticalLogo} onClick={() => returnHome()}/>
+            <TopLogo src={verticalLogo} />
             <TopButtonsWrapper>
-                <TopMenuButton onClick={() => handleAboutUs()}>ABOUT US</TopMenuButton>
-                <TopMenuButton onClick={() => handleContactUs()}>CONTACT US</TopMenuButton>
-                <TopMenuButton onClick={() => handleGiveaway()}>GIVEAWAY</TopMenuButton>
-                <TopMenuButton onClick={() => handleLogin()}>LOGIN</TopMenuButton>
+                <TopMenuButton >ABOUT US</TopMenuButton>
+                <TopMenuButton >CONTACT US</TopMenuButton>
+                <TopMenuButton >GIVEAWAY</TopMenuButton>
+                <TopMenuButton >LOGIN</TopMenuButton>
                 <HamburgerMenu src={hamburger}/>
             </TopButtonsWrapper>
         </TopMenu>

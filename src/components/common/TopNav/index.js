@@ -1,11 +1,11 @@
 import React from 'react';
 import { 
-        TopMenu, 
-        TopMenuButton, 
-        TopButtonsWrapper, 
-        TopLogo, 
-        HamburgerMenu 
-        } from './style';
+    TopMenu, 
+    TopMenuButton, 
+    TopButtonsWrapper, 
+    TopLogo, 
+    HamburgerMenu 
+} from './style';
 import verticalLogo from '../../../images/verticalLogo.png';
 import { navigate } from 'gatsby';
 import hamburger from "../../../assets/icons/hamburger-menu.svg";
