@@ -39,7 +39,7 @@ const Footer = () => {
                     CONTACT US
                 </FooterButton>
             </div>
-            <Copyright>Copyright 2021. All Rights Reserved.</Copyright>
+            <Copyright>Copyright CDL Hint ® 2021. All Rights Reserved.</Copyright>
         </Container>
     )
 };

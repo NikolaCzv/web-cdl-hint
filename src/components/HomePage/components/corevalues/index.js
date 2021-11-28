@@ -31,10 +31,9 @@ const CoreValues = () => {
                         WE ARE CDL HINT 
                     </CardTitle>
                     <CardSub>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        With years of experience in trucking, marketing and tech, 
+                        and passion in all three fields, we came to a solution - to help drivers 
+                        find a right path in their professional career.  
                     </CardSub>
                 </ContentAlt>
             </Card>
@@ -45,10 +44,12 @@ const CoreValues = () => {
                         WE BELIEVE IN TRUST
                     </CardTitle>
                     <CardSub>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam, 
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        We believe in what we do! That's why we are here to help you
+                        make right choices in your career.
+                        <span style={{ marginLeft: '5px'}}>
+                        We believe in you and we know
+                        how important is the work you do! 
+                        </span>
                     </CardSub>
                 </ContentAlt>
                 <Content>
@@ -65,10 +66,12 @@ const CoreValues = () => {
                         WE CARE FOR OUR CLIENTS
                     </CardTitle>
                     <CardSub>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, 
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                        Our goal is to find the best match for our clients, because our clients are
+                        our top priority.
+                        <span style={{ marginLeft: '5px'}}>
+                        Working with the top companies in Chicago area, 
+                        makes our job easier. 
+                        </span>
                     </CardSub>
                 </ContentAlt>
             </Card>

@@ -24,7 +24,28 @@ export const Container = styled.div`
         padding-left: 0.3rem;
         padding-right: 0.3rem;
     }
-    `;
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        height: 3.5rem;
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        height: 3.5rem;
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+    }
+`;
     // @media only screen and (max-width: 768px){
     //     padding-left: 20px;
     //     padding-right: 5px;

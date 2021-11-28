@@ -18,6 +18,24 @@ export const Container = styled.div`
         height: 120vh;
         padding: 0rem;
     };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3){
+        height: 120vh;
+        padding: 0rem;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        height: 100vh;
+        padding: 0rem;
+    };
 `;
 
 export const TabButton = styled.button`
@@ -50,6 +68,29 @@ export const TabButton = styled.button`
         justify-content: center;
         align-items: center;
     };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    };
 `;
 
 export const Tab = styled.div`
@@ -59,6 +100,25 @@ export const Tab = styled.div`
         flex-direction: column;
     };
     @media screen and (device-aspect-ratio: 375/667){
+        display: flex;
+        flex-direction: column;
+    };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        display: flex;
+        flex-direction: column;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
         display: flex;
         flex-direction: column;
     };
@@ -78,6 +138,27 @@ export const TabContent = styled.div`
         height: auto;
     };
     @media screen and (device-aspect-ratio: 375/667){
+        padding-top: 1.5rem;
+        height: auto;
+        padding-bottom: 2rem;
+    };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        padding-top: 1.5rem;
+        height: auto;
+        padding-bottom: 2rem;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
         padding-top: 1.5rem;
         height: auto;
         padding-bottom: 2rem;
@@ -102,6 +183,25 @@ export const Form = styled.div`
         justify-content: center;
     };
     @media screen and (device-aspect-ratio: 375/667){
+        flex-direction: column;
+        justify-content: center;
+    };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        flex-direction: column;
+        justify-content: center;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
         flex-direction: column;
         justify-content: center;
     };
@@ -144,6 +244,27 @@ export const ApplyButton = styled.button`
         margin-top: 20px;
     };
     @media screen and (device-aspect-ratio: 375/667){
+        width: 11.25rem;
+        font-size: 16px;
+        margin-top: 20px;
+    };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        width: 11.25rem;
+        font-size: 16px;
+        margin-top: 20px;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
         width: 11.25rem;
         font-size: 16px;
         margin-top: 20px;

@@ -18,10 +18,27 @@ export const Container = styled.div`
     @media screen and (device-aspect-ratio: 375/667){
         height: 280vh;
     };
-`;    
-// @media only screen and (max-width: 768px){
-//     height: 240vh;
-// };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        height: 305vh;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        height: 280vh;
+    };
+    @media only screen and (max-width: 768px){
+        height: 305vh;
+    };
+`;
 
 export const Card = styled.div`
     display: flex;
@@ -38,16 +55,37 @@ export const Card = styled.div`
         flex-direction: column;
         height: 85vh;
     };
-    @media only screen and (min-width: 769px){
+    @media only screen and (max-width: 768px){
+        height: 240vh;
+    };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
         overflow: hidden;
+        flex-direction: column;
+        height: 95vh;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        overflow: hidden;
+        flex-direction: column;
+        height: 85vh;
+    };
+    @media only screen and (max-width: 768px){
+        overflow: hidden;
+        flex-direction: column;
+        height: 90vh;
+        justify-content: space-between;
     };
 `;
-
-// @media only screen and (max-width: 768px){
-//     overflow: hidden;
-//     flex-direction: column;
-//     height: 75vh;
-// };
 
 export const MiddleCard = styled.div`
     display: flex;
@@ -70,17 +108,40 @@ export const MiddleCard = styled.div`
     @media only screen and (min-width: 769px){
         overflow: hidden;
     };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        overflow: hidden;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        height: 95vh;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        overflow: hidden;
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+        height: 95vh;
+    };
+    @media only screen and (max-width: 768px){
+        overflow: hidden;
+        flex-direction: column-reverse;
+        height: 90vh;
+        justify-content: space-between;
+    };
 `;
-
-// @media only screen and (max-width: 768px){
-//     overflow: hidden;
-//     flex-direction: column;
-//     height: 75vh;
-//     flex-direction: column-reverse;
-// };
 
 export const Image = styled.img`
     width: 100%;
+    height: 100%;
     @media screen and (device-aspect-ratio: 40/71){
         width: 100%;
         height: 37.5vh;
@@ -89,12 +150,30 @@ export const Image = styled.img`
         width: 100%;
         height: 37.5vh;
     };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        width: 100%;
+        height: 37.5vh;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        width: 100%;
+        height: 37.5vh;
+    };
+    @media only screen and (max-width: 768px){
+        width: 100%;
+        height: 45vh;
+    };
 `;
-
-// @media only screen and (max-width: 768px){
-//     width: 100%;
-//     height: 37.5vh;
-// };
 
 export const Content = styled.div`
     display: flex;
@@ -109,17 +188,34 @@ export const Content = styled.div`
         width: 100%;
         height: 37.5vh;
     };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        width: 100%;
+        height: 37.5vh;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        width: 100%;
+        height: 37.5vh;
+    };
+    @media only screen and (max-width: 768px){
+        width: 100%;
+        height: 37.5vh;
+    };
 `;
-
-// @media only screen and (max-width: 768px){
-//     width: 100%;
-//     height: 37.5vh;
-// };
 
 export const ContentAlt = styled.div`
     justify-content: space-evenly;
-    align-items: end; 
-    padding-left: 40px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -140,14 +236,42 @@ export const ContentAlt = styled.div`
         justify-content: flex-start;
         padding-top: 2rem;
     };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        padding-left: 1.25rem;
+        width: 100%;
+        height: 40vh;
+        justify-content: center;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        align-items: unset; 
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        padding-left: 1.25rem;
+        width: 100%;
+        height: 40vh;
+        justify-content: center;
+        justify-content: flex-start;
+        padding-top: 2rem;
+        align-items: unset; 
+    };
+    @media only screen and (max-width: 768px){
+        padding-left: 20px;
+        width: 100%;
+        height: 40vh;
+        justify-content: center;
+    };
 `;
-
-// @media only screen and (max-width: 768px){
-//     padding-left: 20px;
-//     width: 100%;
-//     height: 40vh;
-//     justify-content: center;
-// };
 
 export const CardTitle = styled.h1`
     font-weight: bold;
@@ -162,11 +286,16 @@ export const CardTitle = styled.h1`
     @media only screen and (min-width: 769px){
         font-size: 32px;
     };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        font-size: 32px;
+    };
+    @media only screen and (max-width: 768px){
+        font-size: 24px;
+    };
 `;
-
-// @media only screen and (max-width: 768px){
-//     font-size: 24px;
-// };
 
 export const CardSub = styled.div`
     font-size: 24px;
@@ -180,8 +309,29 @@ export const CardSub = styled.div`
         font-size: 16px;
         width: auto;
     };
-    @media only screen and (min-width: 769px){
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        font-size: 18px;
+        width: 100%;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
         font-size: 20px;
+        width: 100%;
+    };
+    @media only screen and (max-width: 768px){
+        font-size: 24px;
+        width: 100%;
+        padding-bottom: 20px;
     };
 `;
 
@@ -193,6 +343,29 @@ export const Icon = styled.img`
     };
     @media screen and (device-aspect-ratio: 375/667){
         width: 2.5rem;
+        margin-bottom: 1.25rem;
+    };
+    @media only screen 
+    and (min-device-width : 414px) 
+    and (max-device-width : 736px)
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (orientation : portrait) 
+    and (-webkit-min-device-pixel-ratio : 3) 
+    and (-webkit-device-pixel-ratio : 3)
+    {
+        width: 2.5rem;
+        margin-bottom: 1.25rem;
+    };
+    @media only screen 
+    and (device-width: 414px) 
+    and (device-height: 896px) 
+    and (-webkit-device-pixel-ratio: 2) {
+        width: 2.5rem;
+        margin-bottom: 1.25rem;
+    };
+    @media only screen and (max-width: 768px){
+        width: 8%;
         margin-bottom: 1.25rem;
     };
 `;

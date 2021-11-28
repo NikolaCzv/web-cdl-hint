@@ -74,6 +74,7 @@ export const MediaWrapper = styled.div`
 `;
 
 export const Media = styled.img`
+    cursor: pointer;
     @media only screen and (device-aspect-ratio: 40/71){1
         width: 1.875rem;
         margin-bottom: 1rem;
@@ -85,8 +86,6 @@ export const Media = styled.img`
         margin-right: 0rem;
     };
 `;
-
-// (device-aspect-ratio: 40/71)
 
 export const FooterButton = styled.button`
     border: none;
