@@ -1,7 +1,13 @@
 import React from 'react';
 
+import TopBanner from '../components/HomePage/components/topBanner';
+
 const ContactUs = () => {
-    return <h1>CONTACT US PAGE</h1>
+    return (
+        <div>
+            <TopBanner />
+        </div>
+    );
 };
 
 export default ContactUs;

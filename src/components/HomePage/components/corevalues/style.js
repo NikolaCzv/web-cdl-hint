@@ -45,6 +45,7 @@ export const Card = styled.div`
     flex-direction: row;
     background-color: ${colors.grayBackground};
     width: 90%;
+    height: 50vh;
     @media screen and (device-aspect-ratio: 40/71){
         overflow: hidden;
         flex-direction: column;
@@ -93,6 +94,7 @@ export const MiddleCard = styled.div`
     height: 30%;
     background-color: ${colors.grayBackground};
     width: 90%;
+    height: 50vh;
     @media screen and (device-aspect-ratio: 40/71){
         overflow: hidden;
         flex-direction: column-reverse;
@@ -301,6 +303,7 @@ export const CardSub = styled.div`
     font-size: 24px;
     width: 65%;
     font-family: ${fonts.main};
+    font-weight: 100;
     @media only screen and (device-aspect-ratio: 40/71){
         font-size: 16px;
         width: auto;

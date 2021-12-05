@@ -1,22 +1,26 @@
 import React from 'react';
 import homeVideo from "../../../../assets/videos/homeVideo.mp4";
 import hamburger from "../../../../assets/icons/hamburger-menu.svg";
+import { navigate } from "gatsby"  
 import { 
     VideoTitle, 
-    TopLogo, 
-    TopMenuButton, 
-    TopMenu,
-    TopButtonsWrapper,
-    HamburgerMenu,
     VideoText
 } from './style';
+
+import { 
+    TopLogo,
+    TopMenuButton,
+    TopMenu,
+    TopButtonsWrapper,
+    HamburgerMenu
+ } from '../../../style';
 import verticalLogo from '../../../../images/verticalLogo.png';
 
 const MainVideo = () => {
     return (
     <>  
         <video
-            autoplay="autoplay"
+            autoPlay="autoplay"
             muted
             loop
             style={{
@@ -34,9 +38,13 @@ const MainVideo = () => {
         <TopMenu>
             <TopLogo src={verticalLogo} />
             <TopButtonsWrapper>
-                <TopMenuButton>ABOUT US</TopMenuButton>
-                <TopMenuButton>CONTACT US</TopMenuButton>
-                <TopMenuButton>GIVEAWAY</TopMenuButton>
+                <TopMenuButton onClick={() => navigate('/about-us')}>
+                    ABOUT US
+                </TopMenuButton>
+                <TopMenuButton onClick={() => navigate('/contact-us')}>
+                    CONTACT US
+                </TopMenuButton>
+                {/* <TopMenuButton>GIVEAWAY</TopMenuButton> */}
                 <TopMenuButton>LOGIN</TopMenuButton>
                 <HamburgerMenu src={hamburger}/>
             </TopButtonsWrapper>

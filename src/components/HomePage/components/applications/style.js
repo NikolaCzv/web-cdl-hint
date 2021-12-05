@@ -176,14 +176,14 @@ export const Form = styled.div`
     width: 90%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: ${props => props.isCompanyTab ? 'center' : 'space-between'};
     padding: 0px;
     @media screen and (device-aspect-ratio: 40/71){
-        flex-direction: column;
+        flex-direction: ${props => props.isCompanyTab ? 'row' : 'column'};
         justify-content: center;
     };
     @media screen and (device-aspect-ratio: 375/667){
-        flex-direction: column;
+        flex-direction: ${props => props.isCompanyTab ? 'row' : 'column'};
         justify-content: center;
     };
     @media only screen 
@@ -195,20 +195,20 @@ export const Form = styled.div`
     and (-webkit-min-device-pixel-ratio : 3) 
     and (-webkit-device-pixel-ratio : 3)
     {
-        flex-direction: column;
+        flex-direction: ${props => props.isCompanyTab ? 'row' : 'column'};
         justify-content: center;
     };
     @media only screen 
     and (device-width: 414px) 
     and (device-height: 896px) 
     and (-webkit-device-pixel-ratio: 2) {
-        flex-direction: column;
+        flex-direction: ${props => props.isCompanyTab ? 'row' : 'column'};
         justify-content: center;
     };
 `;
 
 export const InputFieldWrapper = styled.div`
-    width: 100%;
+    width: ${props => props.isCompanyTab ? '70%' : '100%'};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -219,6 +219,10 @@ export const InputField = styled(Input)`
     font-family: ${fonts.main};
     margin-bottom: 1.5rem;
     width: 80%;
+    height: 2.45rem;
+    ::placeholder {
+        font-size: 1.1em;
+      }
 `;
 
 export const ApplyButton = styled.button`

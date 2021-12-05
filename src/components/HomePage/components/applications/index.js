@@ -17,7 +17,7 @@ import { states } from '../../../../utils/states';
 const selectStyle = {
     marginBottom: '1.5rem', 
     fontFamily: fonts.main,
-    width: '80%'
+    width: '80%',
 };
 
 const Applications = () => {
@@ -52,9 +52,9 @@ const Applications = () => {
                 <TabButton selected={isCompanyTab} onClick={() => handleTabs('company')}>
                     REQUEST A DRIVER
                 </TabButton>
-                <TabButton selected={isListTab} onClick={() => handleTabs('list')}>
+                {/* <TabButton selected={isListTab} onClick={() => handleTabs('list')}>
                     LIST OF COMPANIES
-                </TabButton>
+                </TabButton> */}
             </Tab>
 
             {isDriverTab ?
@@ -70,10 +70,11 @@ const Applications = () => {
                             <Select 
                                 style={selectStyle}
                                 placeholder="CDL State"
+                                size='large'
                             >
-                                {states.map(state => {
+                                {states.map((state, index) => {
                                     return (
-                                        <Option value={state.abbreviation}>
+                                        <Option value={state.abbreviation} key={index}>
                                             {state.abbreviation}
                                         </Option>
                                     );
@@ -82,6 +83,7 @@ const Applications = () => {
                             <Select 
                                 style={selectStyle}
                                 placeholder="Trailer Type"
+                                size='large'
                             >
                                 <Option value="any">Any</Option>
                                 <Option value="doubles">Doubles</Option>
@@ -93,6 +95,7 @@ const Applications = () => {
                             <Select 
                                 style={selectStyle}
                                 placeholder="Driver Type"
+                                size='large'
                             >
                                 <Option value="any">Any</Option>
                                 <Option value="company">Company</Option>
@@ -101,6 +104,7 @@ const Applications = () => {
                             <Select 
                                 style={selectStyle}
                                 placeholder="Years of Experience"
+                                size='large'
                             >
                                 3 , 4, 5+
                                 <Option value="<1">Less Then 1</Option>
@@ -116,7 +120,15 @@ const Applications = () => {
                 </TabContent>
             : isCompanyTab ? 
                 <TabContent id="company" class="tabcontent">
-                    <p>Company application.</p>
+                    <Form isCompanyTab={isCompanyTab}>
+                        <InputFieldWrapper isCompanyTab={isCompanyTab}>
+                            <InputField placeholder="Company Name"/>
+                            <InputField placeholder="Phone Number"/>
+                            <InputField placeholder="Email Address"/>
+                            <InputField placeholder="Form Applicant (First & Last Name)"/>
+                        </InputFieldWrapper>
+                    </Form>
+                    <ApplyButton>APPLY</ApplyButton>
                 </TabContent> 
             : isListTab ?
                 <TabContent id="list" class="tabcontent">

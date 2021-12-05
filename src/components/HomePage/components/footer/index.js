@@ -13,6 +13,8 @@ import facebook from '../../../../assets/icons/facebook.svg';
 import instagram from '../../../../assets/icons/instagram.svg';
 import linkedin from '../../../../assets/icons/linkedin.svg';
 
+import { navigate } from "gatsby"  
+
 const Footer = () => {
     return(
         <Container>
@@ -26,16 +28,16 @@ const Footer = () => {
                 <Media src={linkedin}/>
             </MediaWrapper>
             <div>
-                <FooterButton>
+                <FooterButton onClick={() => navigate('/about-us')}>
                     ABOUT US
                 </FooterButton>
-                <FooterButton>
+                {/* <FooterButton>
                     MY ACCOUNT
-                </FooterButton>
+                </FooterButton> */}
                 <FooterButton>
                     TERMS & CONDITIONS
                 </FooterButton>
-                <FooterButton>
+                <FooterButton onClick={() => navigate('/contact-us')}>
                     CONTACT US
                 </FooterButton>
             </div>
