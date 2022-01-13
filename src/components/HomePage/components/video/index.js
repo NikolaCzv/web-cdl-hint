@@ -16,7 +16,7 @@ import {
  } from '../../../style';
 import verticalLogo from '../../../../images/verticalLogo.png';
 
-const MainVideo = () => {
+const MainVideo = ({ toggleContactUs }) => {
     return (
     <>  
         <video
@@ -41,7 +41,7 @@ const MainVideo = () => {
                 <TopMenuButton onClick={() => navigate('/about-us')}>
                     ABOUT US
                 </TopMenuButton>
-                <TopMenuButton onClick={() => navigate('/contact-us')}>
+                <TopMenuButton onClick={toggleContactUs}>
                     CONTACT US
                 </TopMenuButton>
                 {/* <TopMenuButton>GIVEAWAY</TopMenuButton> */}
@@ -52,7 +52,7 @@ const MainVideo = () => {
         <VideoTitle>
             Come join CDL HINT family TODAY!
             <VideoText>
-                You are only a few click away from your dream job! 
+                You are only a few clicks away from your dream job! 
                 We tend to be the safest bridge you will cross in your career!
             </VideoText>
         </VideoTitle>

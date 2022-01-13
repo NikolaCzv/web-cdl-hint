@@ -12,10 +12,10 @@ import {
 import aboutUs from '../../../../images/aboutUs.png';
 import hamburger from "../../../../assets/icons/hamburger-menu.svg";
 import verticalLogo from '../../../../images/verticalLogo.png';
-import { navigate } from "gatsby"  
+import { navigate } from "gatsby";
 
 
-const MainImage = () => {
+const MainImage = ({ toggleContactUs }) => {
     return (
         <div>
             <Image src={aboutUs}/>
@@ -25,7 +25,7 @@ const MainImage = () => {
                     <TopMenuButton onClick={() => navigate('/')}>
                         HOME
                     </TopMenuButton>
-                    <TopMenuButton onClick={() => navigate('/contact-us')}>
+                    <TopMenuButton onClick={toggleContactUs}>
                         CONTACT US
                     </TopMenuButton>
                     {/* <TopMenuButton>GIVEAWAY</TopMenuButton> */}

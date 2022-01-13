@@ -13,6 +13,8 @@ import {
 import { Select } from 'antd';
 import { fonts } from '../../../../utils/fonts';
 import { states } from '../../../../utils/states';
+import axios from 'axios';
+import { notification } from 'antd';
 
 const selectStyle = {
     marginBottom: '1.5rem', 
@@ -21,6 +23,26 @@ const selectStyle = {
 };
 
 const Applications = () => {
+    const [companyData, setCompanyData] = useState({
+        companyName: "",
+        email: "",
+        dot: "",
+        phone: "",
+        phoneLiveTransfer: "",
+        address: "",
+        availability: ""
+    });
+    const [driverData, setDriverData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        cdlState: '',
+        trailerType: '',
+        driverType: '',
+        yearsOfExperience: '',
+        appliedAt: new Date
+    })
     const [isDriverTab, setIsDriverTab] = useState(true);
     const [isCompanyTab, setIsCompanyTab] = useState(false);
     const [isListTab, setIsListTab] = useState(false);
@@ -43,6 +65,71 @@ const Applications = () => {
         }
     };
 
+    const handleOnChange = (type, e, category) => {
+        if(category === 'driver'){
+            setDriverData({
+                ...driverData,
+                [type]: e.target.value
+            });
+        } else {
+            setCompanyData({
+                ...companyData,
+                [type]: e.target.value
+            })
+        }
+    };
+
+    const handleOnSelect = (type, value) => {
+        setDriverData({
+            ...driverData,
+            [type]: value
+        })
+    };
+
+    const openNotification = () => {
+        notification.success({
+          message: 'Successfully Sent',
+          duration: 3,
+          description:
+            'The application successfully sent. We will be contacting you shortly!',
+        });
+    };
+
+    const handleSubmit = (type) => {
+        if(type === 'driver'){
+            let fullName = driverData.firstName + " " + driverData.lastName;
+            let body = driverData;
+            delete body.firstName;
+            delete body.lastName;
+            body.fullName = fullName;
+    
+            console.log('BODY', fullName, body)
+    
+            openNotification();
+    
+            // axios.post('https://cdl-hint-be-stage.herokuapp.com/api/driver/apply', body)
+            // .then(data => console.log(data))
+            // .catch(err => console.log(err))
+    
+            // fetch('https://cdl-hint-be-stage.herokuapp.com/api/driver/apply', 
+            // {
+            //     method: 'POST',
+            //     headers: {
+            //       'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify(body)
+            // })
+            // .then(data => console.log(data))
+            // .catch(err => console.log(err))
+        } else {
+            openNotification();
+            console.log(companyData);
+            axios.post('https://cdl-hint-be-stage.herokuapp.com/api/company/apply', companyData)
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
+        }
+    };
+
     return (
         <Container id='applications'>
             <Tab>
@@ -58,19 +145,32 @@ const Applications = () => {
             </Tab>
 
             {isDriverTab ?
-                <TabContent id="driver" class="tabcontent">
+                <TabContent id="driver" className="tabcontent">
                     <Form>
                         <InputFieldWrapper>
-                            <InputField placeholder="First Name"/>
-                            <InputField placeholder="Last Name"/>
-                            <InputField placeholder="Email Address"/>
-                            <InputField placeholder="Phone number"/>
+                            <InputField 
+                                placeholder="First Name" 
+                                onChange={e => handleOnChange('firstName', e, 'driver')}
+                            />
+                            <InputField 
+                                placeholder="Last Name" 
+                                onChange={e => handleOnChange('lastName', e, 'driver')}
+                            />
+                            <InputField 
+                                placeholder="Email Address" 
+                                onChange={e => handleOnChange('email', e, 'driver')}
+                            />
+                            <InputField 
+                                placeholder="Phone number" 
+                                onChange={e => handleOnChange('phone', e, 'driver')}
+                            />
                         </InputFieldWrapper>
                         <InputFieldWrapper>
                             <Select 
                                 style={selectStyle}
                                 placeholder="CDL State"
                                 size='large'
+                                onSelect={value => handleOnSelect('cdlState', value)}
                             >
                                 {states.map((state, index) => {
                                     return (
@@ -84,6 +184,7 @@ const Applications = () => {
                                 style={selectStyle}
                                 placeholder="Trailer Type"
                                 size='large'
+                                onSelect={value => handleOnSelect('trailerType', value)}
                             >
                                 <Option value="any">Any</Option>
                                 <Option value="doubles">Doubles</Option>
@@ -96,6 +197,7 @@ const Applications = () => {
                                 style={selectStyle}
                                 placeholder="Driver Type"
                                 size='large'
+                                onSelect={value => handleOnSelect('driverType', value)}
                             >
                                 <Option value="any">Any</Option>
                                 <Option value="company">Company</Option>
@@ -105,6 +207,7 @@ const Applications = () => {
                                 style={selectStyle}
                                 placeholder="Years of Experience"
                                 size='large'
+                                onSelect={value => handleOnSelect('yearsOfExperience', value)}
                             >
                                 3 , 4, 5+
                                 <Option value="<1">Less Then 1</Option>
@@ -116,19 +219,32 @@ const Applications = () => {
                             </Select>
                         </InputFieldWrapper>
                     </Form>
-                    <ApplyButton>APPLY</ApplyButton>
+                    <ApplyButton onClick={() => handleSubmit('driver')}>
+                        APPLY
+                    </ApplyButton>
                 </TabContent>
             : isCompanyTab ? 
                 <TabContent id="company" class="tabcontent">
                     <Form isCompanyTab={isCompanyTab}>
                         <InputFieldWrapper isCompanyTab={isCompanyTab}>
-                            <InputField placeholder="Company Name"/>
-                            <InputField placeholder="Phone Number"/>
-                            <InputField placeholder="Email Address"/>
-                            <InputField placeholder="Form Applicant (First & Last Name)"/>
+                            <InputField 
+                                placeholder="Company Name"
+                                onChange={e => handleOnChange('companyName', e, 'company')}
+                            />
+                            <InputField 
+                                placeholder="Phone Number" 
+                                onChange={e => handleOnChange('phone', e, 'company')}
+                            />
+                            <InputField 
+                                placeholder="Email Address"
+                                onChange={e => handleOnChange('email', e, 'company')}
+                            />
+                            {/* <InputField placeholder="Form Applicant (First & Last Name)"/> */}
                         </InputFieldWrapper>
                     </Form>
-                    <ApplyButton>APPLY</ApplyButton>
+                    <ApplyButton onClick={() => handleSubmit('company')}>
+                        APPLY
+                    </ApplyButton>
                 </TabContent> 
             : isListTab ?
                 <TabContent id="list" class="tabcontent">

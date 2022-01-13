@@ -15,7 +15,7 @@ import linkedin from '../../../../assets/icons/linkedin.svg';
 
 import { navigate } from "gatsby"  
 
-const Footer = () => {
+const Footer = ({ toggleContactUs }) => {
     return(
         <Container>
             <BottomLogo src={verticalLogo}/>
@@ -37,7 +37,7 @@ const Footer = () => {
                 <FooterButton>
                     TERMS & CONDITIONS
                 </FooterButton>
-                <FooterButton onClick={() => navigate('/contact-us')}>
+                <FooterButton onClick={toggleContactUs}>
                     CONTACT US
                 </FooterButton>
             </div>
