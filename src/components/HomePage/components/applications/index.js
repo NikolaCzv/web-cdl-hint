@@ -4,7 +4,6 @@ import {
     Container, 
     Tab, 
     TabContent,
-    ListText,
     Form,
     InputFieldWrapper,
     InputField,
@@ -16,54 +15,44 @@ import { states } from '../../../../utils/states';
 import axios from 'axios';
 import { notification } from 'antd';
 
+// const API_URL = "http://localhost:3002/api";
+const API_URL = "https://cdl-hint-be-stage.herokuapp.com/api";
+
 const selectStyle = {
     marginBottom: '1.5rem', 
     fontFamily: fonts.main,
     width: '80%',
 };
 
+const INIT_DRIVER_APPLY = {
+    firstName: null,
+    lastName: null,
+    email: null,
+    phone: null,
+    cdlState: null,
+    trailerType: null,
+    driverType: null,
+    yearsOfExperience: null
+};
+
+const INIT_COMPANY_APPLY = {
+    companyName: null,
+    email: null,
+    phone: null,
+    applicantFullName: null
+}
+
+const TABS = {
+    DRIVER: "driver",
+    COMPANY: "company"
+}
+
 const Applications = () => {
-    const [companyData, setCompanyData] = useState({
-        companyName: "",
-        email: "",
-        dot: "",
-        phone: "",
-        phoneLiveTransfer: "",
-        address: "",
-        availability: ""
-    });
-    const [driverData, setDriverData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        cdlState: '',
-        trailerType: '',
-        driverType: '',
-        yearsOfExperience: '',
-        appliedAt: new Date
-    })
-    const [isDriverTab, setIsDriverTab] = useState(true);
-    const [isCompanyTab, setIsCompanyTab] = useState(false);
-    const [isListTab, setIsListTab] = useState(false);
-
+    const [companyData, setCompanyData] = useState(INIT_COMPANY_APPLY);
+    const [driverData, setDriverData] = useState(INIT_DRIVER_APPLY);
+    const [activeTab, setActiveTab] = useState(TABS.DRIVER);
+    const [loading, setLoading] = useState(false);
     const { Option } = Select;
-
-    const handleTabs = tab => {
-        if(tab === "driver"){
-            setIsDriverTab(true);
-            setIsListTab(false);
-            setIsCompanyTab(false);
-        } else if (tab === "company"){
-            setIsDriverTab(false);
-            setIsListTab(false);
-            setIsCompanyTab(true);
-        } else {
-            setIsDriverTab(false);
-            setIsListTab(true);
-            setIsCompanyTab(false);
-        }
-    };
 
     const handleOnChange = (type, e, category) => {
         if(category === 'driver'){
@@ -86,62 +75,79 @@ const Applications = () => {
         })
     };
 
-    const openNotification = () => {
+    const openSuccessNotification = () => {
         notification.success({
           message: 'Successfully Sent',
           duration: 3,
           description:
-            'The application successfully sent. We will be contacting you shortly!',
+            'The application successfully sent. We will be contacting you shortly.',
         });
     };
 
-    const handleSubmit = (type) => {
+    const openErrorNotification = () => {
+        notification.error({
+            message: 'Not Sent',
+            duration: 3,
+            description:
+              'The application not sent. All inputs are required or you already applied.',
+        });
+    };
+
+    const handleSubmit = async type => {
+        setLoading(true);
         if(type === 'driver'){
-            let fullName = driverData.firstName + " " + driverData.lastName;
-            let body = driverData;
-            delete body.firstName;
-            delete body.lastName;
-            body.fullName = fullName;
-    
-            console.log('BODY', fullName, body)
-    
-            openNotification();
-    
-            // axios.post('https://cdl-hint-be-stage.herokuapp.com/api/driver/apply', body)
-            // .then(data => console.log(data))
-            // .catch(err => console.log(err))
-    
-            // fetch('https://cdl-hint-be-stage.herokuapp.com/api/driver/apply', 
-            // {
-            //     method: 'POST',
-            //     headers: {
-            //       'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify(body)
-            // })
-            // .then(data => console.log(data))
-            // .catch(err => console.log(err))
+            const data = {
+                fullName: `${driverData.firstName} ${driverData.lastName}`,
+                email: driverData.email,
+                phone: driverData.phone,
+                cdlState: driverData.cdlState,
+                trailerType: driverData.trailerType,
+                driverType: driverData.driverType,
+                yearsOfExperience: driverData.yearsOfExperience,
+                appliedAt: new Date().toUTCString()
+            };
+
+            try {
+                await axios.post(`${API_URL}/driver/apply`, data);
+                openSuccessNotification();
+                setDriverData(INIT_DRIVER_APPLY);
+                setLoading(false);
+            } catch (e) {
+                openErrorNotification();
+                setLoading(false);
+                console.log('ERROR driver apply', e);
+            }
         } else {
-            openNotification();
-            console.log(companyData);
-            axios.post('https://cdl-hint-be-stage.herokuapp.com/api/company/apply', companyData)
-            .then(data => console.log(data))
-            .catch(err => console.log(err))
+            const data = {
+                ...companyData,
+                appliedAt: new Date().toUTCString()
+            };
+
+            try {
+                await axios.post(`${API_URL}/company/apply`, data)
+                openSuccessNotification();
+                setCompanyData(INIT_COMPANY_APPLY);
+                setLoading(false);
+            } catch (e) {
+                openErrorNotification();
+                setLoading(false);
+                console.log('ERROR company apply', e);
+            }
         }
     };
+
+    const isCompanyTab = activeTab === TABS.COMPANY;
+    const isDriverTab = activeTab === TABS.DRIVER;
 
     return (
         <Container id='applications'>
             <Tab>
-                <TabButton selected={isDriverTab} onClick={() => handleTabs('driver')}>
+                <TabButton selected={isDriverTab} onClick={() => setActiveTab(TABS.DRIVER)}>
                     DRIVER APPLICATION
                 </TabButton>
-                <TabButton selected={isCompanyTab} onClick={() => handleTabs('company')}>
+                <TabButton selected={isCompanyTab} onClick={() => setActiveTab(TABS.COMPANY)}>
                     REQUEST A DRIVER
                 </TabButton>
-                {/* <TabButton selected={isListTab} onClick={() => handleTabs('list')}>
-                    LIST OF COMPANIES
-                </TabButton> */}
             </Tab>
 
             {isDriverTab ?
@@ -151,18 +157,22 @@ const Applications = () => {
                             <InputField 
                                 placeholder="First Name" 
                                 onChange={e => handleOnChange('firstName', e, 'driver')}
+                                value={driverData.firstName}
                             />
                             <InputField 
                                 placeholder="Last Name" 
                                 onChange={e => handleOnChange('lastName', e, 'driver')}
+                                value={driverData.lastName}
                             />
                             <InputField 
                                 placeholder="Email Address" 
                                 onChange={e => handleOnChange('email', e, 'driver')}
+                                value={driverData.email}
                             />
                             <InputField 
-                                placeholder="Phone number" 
+                                placeholder="Phone Number"
                                 onChange={e => handleOnChange('phone', e, 'driver')}
+                                value={driverData.phone}
                             />
                         </InputFieldWrapper>
                         <InputFieldWrapper>
@@ -171,6 +181,7 @@ const Applications = () => {
                                 placeholder="CDL State"
                                 size='large'
                                 onSelect={value => handleOnSelect('cdlState', value)}
+                                value={driverData.cdlState}
                             >
                                 {states.map((state, index) => {
                                     return (
@@ -185,19 +196,20 @@ const Applications = () => {
                                 placeholder="Trailer Type"
                                 size='large'
                                 onSelect={value => handleOnSelect('trailerType', value)}
+                                value={driverData.trailerType}
                             >
                                 <Option value="any">Any</Option>
                                 <Option value="doubles">Doubles</Option>
                                 <Option value="flatbed">Flatbed</Option>
                                 <Option value="reefer">Reefer</Option>
                                 <Option value="van">Van</Option>
-                                <Option value="other">Other</Option>
                             </Select>
                             <Select 
                                 style={selectStyle}
                                 placeholder="Driver Type"
                                 size='large'
                                 onSelect={value => handleOnSelect('driverType', value)}
+                                value={driverData.driverType}
                             >
                                 <Option value="any">Any</Option>
                                 <Option value="company">Company</Option>
@@ -208,50 +220,52 @@ const Applications = () => {
                                 placeholder="Years of Experience"
                                 size='large'
                                 onSelect={value => handleOnSelect('yearsOfExperience', value)}
+                                value={driverData.yearsOfExperience}
                             >
-                                3 , 4, 5+
-                                <Option value="<1">Less Then 1</Option>
+                                3 , 4+
+                                <Option value="0">Less Then 1</Option>
                                 <Option value="1">1</Option>
                                 <Option value="2">2</Option>
                                 <Option value="3">3</Option>
-                                <Option value="4">4</Option>
-                                <Option value="5+">5+</Option>
+                                <Option value="4">4+</Option>
                             </Select>
                         </InputFieldWrapper>
                     </Form>
-                    <ApplyButton onClick={() => handleSubmit('driver')}>
+                    <ApplyButton disabled={loading} onClick={() => handleSubmit('driver')}>
                         APPLY
                     </ApplyButton>
                 </TabContent>
-            : isCompanyTab ? 
-                <TabContent id="company" class="tabcontent">
+            : isCompanyTab ?
+                <TabContent id="company" className="tabcontent">
                     <Form isCompanyTab={isCompanyTab}>
                         <InputFieldWrapper isCompanyTab={isCompanyTab}>
                             <InputField 
                                 placeholder="Company Name"
                                 onChange={e => handleOnChange('companyName', e, 'company')}
+                                value={companyData.companyName}
+                            />
+                            <InputField
+                              placeholder="Your Full Name"
+                              onChange={e => handleOnChange('applicantFullName', e, 'company')}
+                              value={companyData.applicantFullName}
                             />
                             <InputField 
                                 placeholder="Phone Number" 
                                 onChange={e => handleOnChange('phone', e, 'company')}
+                                value={companyData.phone}
                             />
                             <InputField 
                                 placeholder="Email Address"
                                 onChange={e => handleOnChange('email', e, 'company')}
+                                value={companyData.email}
                             />
-                            {/* <InputField placeholder="Form Applicant (First & Last Name)"/> */}
                         </InputFieldWrapper>
                     </Form>
-                    <ApplyButton onClick={() => handleSubmit('company')}>
+                    <ApplyButton disabled={loading} onClick={() => handleSubmit('company')}>
                         APPLY
                     </ApplyButton>
-                </TabContent> 
-            : isListTab ?
-                <TabContent id="list" class="tabcontent">
-                    <ListText>COMING SOON</ListText>
                 </TabContent>
-            : null }
-
+            : null}
         </Container>
     );
 };
