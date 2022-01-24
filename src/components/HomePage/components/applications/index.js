@@ -16,7 +16,8 @@ import axios from 'axios';
 import { notification } from 'antd';
 
 // const API_URL = "http://localhost:3002/api";
-const API_URL = "https://cdl-hint-be-stage.herokuapp.com/api";
+// const API_URL = "https://cdl-hint-be-stage.herokuapp.com/api";
+const API_URL = "https://cdl-hint-be-prod.herokuapp.com/api"
 
 const selectStyle = {
     marginBottom: '1.5rem', 
