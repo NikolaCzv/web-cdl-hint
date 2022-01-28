@@ -48,7 +48,7 @@ const TABS = {
     COMPANY: "company"
 }
 
-const Applications = () => {
+export const Applications = () => {
     const [companyData, setCompanyData] = useState(INIT_COMPANY_APPLY);
     const [driverData, setDriverData] = useState(INIT_DRIVER_APPLY);
     const [activeTab, setActiveTab] = useState(TABS.DRIVER);
@@ -270,5 +270,3 @@ const Applications = () => {
         </Container>
     );
 };
-
-export default Applications;

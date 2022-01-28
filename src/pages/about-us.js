@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import TopBanner from '../components/HomePage/components/topBanner';
+import TopBanner from '../components/HomePage/components/TopBanner';
 import MainImage from '../components/AboutUs/components/mainImage';
 import Content from '../components/AboutUs/components/Content';
-import Footer from '../components/HomePage/components/footer';
+import Footer from '../components/HomePage/components/Footer';
 import ContactUsModal from '../components/ContactUsModal';
 
 const AboutUs = () => {

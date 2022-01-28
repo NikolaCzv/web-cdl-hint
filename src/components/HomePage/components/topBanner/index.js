@@ -3,12 +3,11 @@ import {
     Container, 
     TextHolder,
     ApplyToday,
-    PhoneHolder,
-    IconHolder
+    PhoneHolder
 } from './style';
-import phoneIcon from '../../../../assets/icons/phone.png';
+import { PHONE_NUMBER } from "../../../../utils/constants"
 
-const TopBanner = () => {
+export const TopBanner = () => {
     return (
         <Container>
             <TextHolder>
@@ -17,14 +16,7 @@ const TopBanner = () => {
                     APPLY NOW! 
                 </ApplyToday>
             </TextHolder>
-            <TextHolder>
-                <PhoneHolder>
-                    +1(123)456-7890
-                </PhoneHolder>
-                <IconHolder src={phoneIcon}/>
-            </TextHolder>
+            <PhoneHolder href={`tel:${PHONE_NUMBER}`}>{PHONE_NUMBER}</PhoneHolder>
         </Container>
     );
 };
-
-export default TopBanner;

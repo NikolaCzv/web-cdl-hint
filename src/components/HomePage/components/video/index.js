@@ -1,24 +1,32 @@
-import React from 'react';
+import React, { useRef, useState } from "react"
 import homeVideo from "../../../../assets/videos/homeVideo.mp4";
 import hamburger from "../../../../assets/icons/hamburger-menu.svg";
-import { navigate } from "gatsby"  
-import { 
-    VideoTitle, 
-    VideoText
+import { navigate } from "gatsby";
+import { useOutsideClick } from "../../../../hooks/useOutsideClick"
+import {
+  Container,
+  MobileMenu,
+  MenuButtonsWrapper,
+  VideoTextWrapper,
+  VideoText
 } from './style';
-
-import { 
+import {
     TopLogo,
     TopMenuButton,
+    MobileMenuButton,
     TopMenu,
     TopButtonsWrapper,
     HamburgerMenu
  } from '../../../style';
 import verticalLogo from '../../../../images/verticalLogo.png';
 
-const MainVideo = ({ toggleContactUs }) => {
+export const Video = ({ toggleContactUs }) => {
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const mobileMenu = useRef();
+  useOutsideClick(mobileMenu, () => setShowMobileMenu(false));
+
     return (
-    <>  
+    <Container>
         <video
             autoPlay="autoplay"
             muted
@@ -29,7 +37,8 @@ const MainVideo = ({ toggleContactUs }) => {
                 height: "80vh",
                 top: 0,
                 left: 0,
-                zIndex: "auto",
+                right: 0,
+                bottom: 0
             }}
         >
             <source src={homeVideo} type="video/mp4" />
@@ -38,26 +47,52 @@ const MainVideo = ({ toggleContactUs }) => {
         <TopMenu>
             <TopLogo src={verticalLogo} />
             <TopButtonsWrapper>
-                <TopMenuButton onClick={() => navigate('/about-us')}>
-                    ABOUT US
-                </TopMenuButton>
-                <TopMenuButton onClick={toggleContactUs}>
-                    CONTACT US
-                </TopMenuButton>
-                {/* <TopMenuButton>GIVEAWAY</TopMenuButton> */}
-                <TopMenuButton>LOGIN</TopMenuButton>
-                <HamburgerMenu src={hamburger}/>
+              <TopMenuButton onClick={async () => await navigate('/about-us')}>
+                ABOUT US
+              </TopMenuButton>
+              <TopMenuButton onClick={toggleContactUs}>
+                CONTACT US
+              </TopMenuButton>
+              <TopMenuButton onClick={() => {
+                window.open("https://app.cdlhint.com/login", "_blank")
+              }}>
+                LOGIN
+              </TopMenuButton>
+              <HamburgerMenu
+                src={hamburger}
+                ref={mobileMenu}
+                onClick={() => setShowMobileMenu(!showMobileMenu)}
+              />
             </TopButtonsWrapper>
         </TopMenu>
-        <VideoTitle>
+        <MobileMenu show={showMobileMenu}>
+            <MenuButtonsWrapper>
+              <MobileMenuButton onClick={async () => {
+                await navigate('/about-us');
+                setShowMobileMenu(false);
+              }}>
+                ABOUT US
+              </MobileMenuButton>
+              <MobileMenuButton onClick={() => {
+                toggleContactUs();
+                setShowMobileMenu(false);
+              }}>
+                CONTACT US
+              </MobileMenuButton>
+              <MobileMenuButton onClick={() => {
+                window.open("https://app.cdlhint.com/login", "_blank")
+              }}>
+                LOGIN
+              </MobileMenuButton>
+            </MenuButtonsWrapper>
+        </MobileMenu>
+        <VideoTextWrapper>
             Come join CDL HINT family TODAY!
             <VideoText>
-                You are only a few clicks away from your dream job! 
+                You are only a few clicks away from your dream job!
                 We tend to be the safest bridge you will cross in your career!
             </VideoText>
-        </VideoTitle>
-    </>
+        </VideoTextWrapper>
+    </Container>
     )
 };
-
-export default MainVideo;

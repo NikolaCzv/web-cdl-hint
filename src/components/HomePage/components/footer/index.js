@@ -15,7 +15,7 @@ import linkedin from '../../../../assets/icons/linkedin.svg';
 
 import { navigate } from "gatsby"  
 
-const Footer = ({ toggleContactUs }) => {
+export const Footer = ({ toggleContactUs }) => {
     return(
         <Container>
             <BottomLogo src={verticalLogo}/>
@@ -45,6 +45,4 @@ const Footer = ({ toggleContactUs }) => {
         </Container>
     )
 };
-
-export default Footer;
 

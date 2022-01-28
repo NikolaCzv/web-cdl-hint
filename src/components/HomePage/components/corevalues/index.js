@@ -18,7 +18,7 @@ import CareIco from '../../../../assets/icons/careIco.png';
 import TrustIco from '../../../../assets/icons/trustIco.png';
 import WeAreCdlIco from '../../../../assets/icons/weAreCdlIco.png';
 
-const CoreValues = () => {
+export const CoreValues = () => {
     return (
         <Container>
             <Card>
@@ -78,5 +78,3 @@ const CoreValues = () => {
         </Container>
     );
 };
-
-export default CoreValues;
