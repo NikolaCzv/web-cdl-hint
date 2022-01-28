@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Header, TextContent } from "./style";
 
-const Content = () => {
+export const Content = () => {
     return (
         <Container>
             <Header>ABOUT US</Header>
@@ -16,5 +16,3 @@ const Content = () => {
         </Container>
     );
 };
-
-export default Content;

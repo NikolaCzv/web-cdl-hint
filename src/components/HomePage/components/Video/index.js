@@ -1,30 +1,15 @@
-import React, { useRef, useState } from "react"
-import homeVideo from "../../../../assets/videos/homeVideo.mp4";
-import hamburger from "../../../../assets/icons/hamburger-menu.svg";
-import { navigate } from "gatsby";
-import { useOutsideClick } from "../../../../hooks/useOutsideClick"
+import React from "react"
 import {
   Container,
-  MobileMenu,
-  MenuButtonsWrapper,
   VideoTextWrapper,
   VideoText
 } from './style';
-import {
-    TopLogo,
-    TopMenuButton,
-    MobileMenuButton,
-    TopMenu,
-    TopButtonsWrapper,
-    HamburgerMenu
- } from '../../../style';
-import verticalLogo from '../../../../images/verticalLogo.png';
+
+import homeVideo from "../../../../assets/videos/homeVideo.mp4";
+
+import { Header } from "../../../Header";
 
 export const Video = ({ toggleContactUs }) => {
-  const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const mobileMenu = useRef();
-  useOutsideClick(mobileMenu, () => setShowMobileMenu(false));
-
     return (
     <Container>
         <video
@@ -44,48 +29,7 @@ export const Video = ({ toggleContactUs }) => {
             <source src={homeVideo} type="video/mp4" />
             Your browser does not support the video tag.
         </video>
-        <TopMenu>
-            <TopLogo src={verticalLogo} />
-            <TopButtonsWrapper>
-              <TopMenuButton onClick={async () => await navigate('/about-us')}>
-                ABOUT US
-              </TopMenuButton>
-              <TopMenuButton onClick={toggleContactUs}>
-                CONTACT US
-              </TopMenuButton>
-              <TopMenuButton onClick={() => {
-                window.open("https://app.cdlhint.com/login", "_blank")
-              }}>
-                LOGIN
-              </TopMenuButton>
-              <HamburgerMenu
-                src={hamburger}
-                ref={mobileMenu}
-                onClick={() => setShowMobileMenu(!showMobileMenu)}
-              />
-            </TopButtonsWrapper>
-        </TopMenu>
-        <MobileMenu show={showMobileMenu}>
-            <MenuButtonsWrapper>
-              <MobileMenuButton onClick={async () => {
-                await navigate('/about-us');
-                setShowMobileMenu(false);
-              }}>
-                ABOUT US
-              </MobileMenuButton>
-              <MobileMenuButton onClick={() => {
-                toggleContactUs();
-                setShowMobileMenu(false);
-              }}>
-                CONTACT US
-              </MobileMenuButton>
-              <MobileMenuButton onClick={() => {
-                window.open("https://app.cdlhint.com/login", "_blank")
-              }}>
-                LOGIN
-              </MobileMenuButton>
-            </MenuButtonsWrapper>
-        </MobileMenu>
+        <Header toggleContactUs={toggleContactUs} />
         <VideoTextWrapper>
             Come join CDL HINT family TODAY!
             <VideoText>

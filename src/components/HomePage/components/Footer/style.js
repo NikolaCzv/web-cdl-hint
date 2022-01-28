@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { colors } from '../../../../utils/colors';
 import footerWallpaper from '../../../../images/footerwp.png';
-import { MenuButton } from "../../../style"
+import { MenuButton } from "../../../Header/style";
 
 export const Container = styled.div`
     display: flex;

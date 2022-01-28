@@ -5,30 +5,6 @@ export const Container = styled.div`
   position: relative;
 `;
 
-export const MobileMenu = styled.div`
-  width: 300px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 7px;
-  background-color: ${colors.main};
-  z-index: 2;
-
-  ${props => props.show ? `
-    display: block;
-  ` : `
-    display: none;
-  `}
-`;
-
-export const MenuButtonsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-`;
-
 export const VideoTextWrapper = styled.div`
     z-index: 1;
     position: absolute;
