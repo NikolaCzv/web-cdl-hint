@@ -4,9 +4,10 @@ import { fonts } from "../../utils/fonts"
 
 const GlobalStyle = createGlobalStyle`
   html, body {
-    margin: 0;
     padding: 0;
     font-family: ${fonts.main};
+    max-width: 1440px;
+    margin: 0 auto;
   }
 `;
 

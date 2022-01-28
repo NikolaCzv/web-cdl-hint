@@ -36,10 +36,11 @@ export const VideoTextWrapper = styled.div`
     color: ${colors.white};
     font-size: 36px;
     bottom: 40px;
-    padding: 10px;
+    padding: 10px 40px;
 
   @media only screen and (max-width: 768px){
     font-size: 24px;
+    padding: 10px 20px;
   };
 `;
 
