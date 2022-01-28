@@ -6,13 +6,17 @@ import {
     PhoneHolder
 } from './style';
 import { PHONE_NUMBER } from "../../../../utils/constants"
+import { navigate } from "gatsby"
 
 export const TopBanner = () => {
+    const handleApplyNow = async () => {
+      await navigate("/#applications")
+    }
     return (
         <Container>
             <TextHolder>
                 We collaborate with hundreds of companies all over the U.S! {" "}
-                <ApplyToday href="#applications"> 
+                <ApplyToday onClick={handleApplyNow}>
                     APPLY NOW! 
                 </ApplyToday>
             </TextHolder>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { TopBanner, Video, CoreValues, Footer } from "../components/HomePage";
+import { TopBanner, Video, Applications, CoreValues, Footer } from "../components/HomePage";
 import { ContactUsModal } from "../components/ContactUsModal"
 import { Layout } from "../components/Layout"
 
@@ -17,7 +17,7 @@ const HomePage = () => {
       />
       <TopBanner />
       <Video toggleContactUs={toggleContactUs}/>
-      {/*<Applications />*/}
+      <Applications />
       <CoreValues />
       <Footer toggleContactUs={toggleContactUs}/>
     </Layout>

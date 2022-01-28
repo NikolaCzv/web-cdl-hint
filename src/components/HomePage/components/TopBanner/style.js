@@ -37,8 +37,14 @@ export const PhoneHolder = styled.a`
     };
 `;
 
-export const ApplyToday = styled.a`
-    text-decoration: underline;
+export const ApplyToday = styled.span`
     cursor: pointer;
     color: ${colors.white};
+    &:hover {
+      text-decoration: underline;
+    }
+
+  @media only screen and (max-width: 768px){
+    text-decoration: underline;
+  };
 `;
