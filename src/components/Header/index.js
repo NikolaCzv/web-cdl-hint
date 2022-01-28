@@ -15,7 +15,10 @@ export const Header = ({ toggleContactUs }) => {
     return (
         <>
           <TopMenu>
-            <TopLogo src={verticalLogo} />
+            <TopLogo
+              onClick={() => navigate("/")}
+              src={verticalLogo}
+            />
             <TopButtonsWrapper>
               <TopMenuButton onClick={async () => await navigate('/about-us')}>
                 ABOUT US

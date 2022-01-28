@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { TopBanner, Footer, CoreValues, Video } from "../components/HomePage";
-import { Hero } from "../components/AboutUs";
+import { Hero, Content } from "../components/AboutUs";
 import { ContactUsModal } from "../components/ContactUsModal";
 import { Layout } from "../components/Layout";
 
@@ -18,7 +18,7 @@ const AboutUs = () => {
             />
             <TopBanner/>
             <Hero toggleContactUs={toggleContactUs} />
-            {/*<Content />*/}
+            <Content />
             <Footer />
         </Layout>
     );
