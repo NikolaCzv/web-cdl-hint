@@ -4,6 +4,6 @@ export const EMAIL_SUPPORT = "support@cdlhint.com";
 
 export const LINKEDIN_LINK = "https://www.linkedin.com";
 
-export const FACEBOOK_LINK = "";
+export const FACEBOOK_LINK = "https://www.facebook.com";
 
-export const INSAGRAM_LINK = "";
+export const INSTAGRAM_LINK = "https://www.instagram.com";

@@ -1,46 +1,47 @@
 import React from 'react';
-import { 
-    BottomLogo, 
-    Container, 
-    FollowSub, 
-    MediaWrapper, 
-    Media, 
-    FooterButton, 
-    Copyright 
-    } from './style';
+import {
+  BottomLogo,
+  Container,
+  MediaWrapper,
+  Media,
+  Copyright,
+  FollowUs,
+  ButtonsWrapper,
+  Button
+} from "./style";
 import verticalLogo from '../../../../images/verticalLogo.png';
 import facebook from '../../../../assets/icons/facebook.svg';
 import instagram from '../../../../assets/icons/instagram.svg';
 import linkedin from '../../../../assets/icons/linkedin.svg';
 
-import { navigate } from "gatsby"  
+import { navigate } from "gatsby"
+import { FACEBOOK_LINK, LINKEDIN_LINK, INSTAGRAM_LINK } from "../../../../utils/constants"
 
 export const Footer = ({ toggleContactUs }) => {
+  const handleSocialMediaUrl = (url) => () => window.open(url, "_blank");
+
     return(
         <Container>
             <BottomLogo src={verticalLogo}/>
-            <FollowSub>
+            <FollowUs>
                 FOLLOW US ON SOCIAL MEDIA
-            </FollowSub>
+            </FollowUs>
             <MediaWrapper>
-                <Media src={facebook}/>
-                <Media src={instagram}/>
-                <Media src={linkedin}/>
+                <Media src={facebook} onClick={handleSocialMediaUrl(FACEBOOK_LINK)} />
+                <Media src={instagram} onClick={handleSocialMediaUrl(INSTAGRAM_LINK)} />
+                <Media src={linkedin} onClick={handleSocialMediaUrl(LINKEDIN_LINK)} />
             </MediaWrapper>
-            <div>
-                <FooterButton onClick={() => navigate('/about-us')}>
+            <ButtonsWrapper>
+                <Button onClick={() => navigate('/about-us')}>
                     ABOUT US
-                </FooterButton>
-                {/* <FooterButton>
-                    MY ACCOUNT
-                </FooterButton> */}
-                <FooterButton>
+                </Button>
+                <Button onClick={() => alert("TODO -> terms and conditions")}>
                     TERMS & CONDITIONS
-                </FooterButton>
-                <FooterButton onClick={toggleContactUs}>
+                </Button>
+                <Button onClick={toggleContactUs}>
                     CONTACT US
-                </FooterButton>
-            </div>
+                </Button>
+            </ButtonsWrapper>
             <Copyright>Copyright CDL Hint ® 2021. All Rights Reserved.</Copyright>
         </Container>
     )

@@ -3,12 +3,11 @@ import {
     Container,
     Card,
     Image,
-    Content,
     CardTitle,
     CardDescription,
-    ContentAlt,
     Icon,
-    MiddleCard, ImageWrapper, TextWrapper
+    ImageWrapper,
+    TextWrapper
 } from "./style"
 
 import WeAreCdl from '../../../../images/weAreCdl.jpg';
