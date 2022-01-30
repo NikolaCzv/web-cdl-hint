@@ -7,23 +7,14 @@ import {
     Form,
     InputFieldWrapper,
     InputField,
-    ApplyButton
+    ApplyButton,
+    selectStyle
 } from './style';
 import { Select } from 'antd';
-import { fonts } from '../../../../utils/fonts';
 import { states } from '../../../../utils/states';
 import axios from 'axios';
+import { API_URL } from "../../../../utils/constants";
 import { notification } from 'antd';
-
-// const API_URL = "http://localhost:3002/api";
-// const API_URL = "https://cdl-hint-be-stage.herokuapp.com/api";
-const API_URL = "https://cdl-hint-be-prod.herokuapp.com/api"
-
-const selectStyle = {
-    marginBottom: '1.5rem', 
-    fontFamily: fonts.main,
-    width: '80%',
-};
 
 const INIT_DRIVER_APPLY = {
     firstName: null,
@@ -48,7 +39,7 @@ const TABS = {
     COMPANY: "company"
 }
 
-const Applications = () => {
+export const Applications = () => {
     const [companyData, setCompanyData] = useState(INIT_COMPANY_APPLY);
     const [driverData, setDriverData] = useState(INIT_DRIVER_APPLY);
     const [activeTab, setActiveTab] = useState(TABS.DRIVER);
@@ -150,9 +141,8 @@ const Applications = () => {
                     REQUEST A DRIVER
                 </TabButton>
             </Tab>
-
             {isDriverTab ?
-                <TabContent id="driver" className="tabcontent">
+                <TabContent>
                     <Form>
                         <InputFieldWrapper>
                             <InputField 
@@ -237,7 +227,7 @@ const Applications = () => {
                     </ApplyButton>
                 </TabContent>
             : isCompanyTab ?
-                <TabContent id="company" className="tabcontent">
+                <TabContent>
                     <Form isCompanyTab={isCompanyTab}>
                         <InputFieldWrapper isCompanyTab={isCompanyTab}>
                             <InputField 
@@ -270,5 +260,3 @@ const Applications = () => {
         </Container>
     );
 };
-
-export default Applications;

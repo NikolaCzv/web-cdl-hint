@@ -1,8 +1,18 @@
 import React from "react";
-
 import { Modal } from "antd";
+import { EMAIL_SUPPORT, LINKEDIN_LINK, PHONE_NUMBER } from "../../utils/constants";
+import styled from "styled-components";
 
-const ContactUsModal = ({ isContactUs, toggleContactUs }) => {
+const Content = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
+const Link = styled.a`
+    margin-bottom: 10px;
+`;
+
+export const ContactUsModal = ({ isContactUs, toggleContactUs }) => {
     return (
         <Modal 
             title="Contact Us" 
@@ -11,11 +21,11 @@ const ContactUsModal = ({ isContactUs, toggleContactUs }) => {
             footer={null}
             centered={true}
         >
-        <p>Phone: +1(123)456-7890</p>
-        <p>Email: cdlsupport@email.com</p>
-        <p>LinkedIn: www.linkedinprofile.com</p>
-    </Modal>
+            <Content>
+                <Link href={`tel:${PHONE_NUMBER}`}>Phone: {PHONE_NUMBER}</Link>
+                <Link href={`mailto:${EMAIL_SUPPORT}`}>Email: {EMAIL_SUPPORT}</Link>
+                <Link href={LINKEDIN_LINK} target="_blank">LinkedIn: {LINKEDIN_LINK}</Link>
+            </Content>
+        </Modal>
     )
 };
-
-export default ContactUsModal;

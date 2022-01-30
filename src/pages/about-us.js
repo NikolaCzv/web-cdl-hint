@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
-import TopBanner from '../components/HomePage/components/topBanner';
-import MainImage from '../components/AboutUs/components/mainImage';
-import Content from '../components/AboutUs/components/Content';
-import Footer from '../components/HomePage/components/footer';
-import ContactUsModal from '../components/ContactUsModal';
+import { TopBanner, Footer, CoreValues, Video } from "../components/HomePage";
+import { Hero, Content } from "../components/AboutUs";
+import { ContactUsModal } from "../components/ContactUsModal";
+import { Layout } from "../components/Layout";
 
 const AboutUs = () => {
     const [isContactUs, setIsContactUs] = useState(false);
@@ -12,16 +11,16 @@ const AboutUs = () => {
     const toggleContactUs = () => setIsContactUs(!isContactUs);
 
     return (
-        <div>
+        <Layout>
             <ContactUsModal 
                 isContactUs={isContactUs} 
                 toggleContactUs={toggleContactUs}
             />
             <TopBanner/>
-            <MainImage toggleContactUs={toggleContactUs} />
+            <Hero toggleContactUs={toggleContactUs} />
             <Content />
             <Footer />
-        </div>
+        </Layout>
     );
 };
 

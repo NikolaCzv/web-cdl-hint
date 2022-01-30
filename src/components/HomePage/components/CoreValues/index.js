@@ -1,15 +1,14 @@
 import React from 'react';
-import { 
-    Container, 
+import {
+    Container,
     Card,
     Image,
-    Content,
     CardTitle,
-    CardSub,
-    ContentAlt,
+    CardDescription,
     Icon,
-    MiddleCard
-} from './style';
+    ImageWrapper,
+    TextWrapper
+} from "./style"
 
 import WeAreCdl from '../../../../images/weAreCdl.jpg';
 import Trust from '../../../../images/trust.png';
@@ -18,65 +17,58 @@ import CareIco from '../../../../assets/icons/careIco.png';
 import TrustIco from '../../../../assets/icons/trustIco.png';
 import WeAreCdlIco from '../../../../assets/icons/weAreCdlIco.png';
 
-const CoreValues = () => {
+export const CoreValues = () => {
     return (
         <Container>
             <Card>
-                <Content>
+                <ImageWrapper>
                     <Image src={WeAreCdl}/>
-                </Content>
-                <ContentAlt>
+                </ImageWrapper>
+                <TextWrapper>
                     <Icon src={WeAreCdlIco}/>
                     <CardTitle>
                         WE ARE CDL HINT 
                     </CardTitle>
-                    <CardSub>
+                    <CardDescription>
                         With years of experience in trucking, marketing and tech, 
                         and passion in all three fields, we came to a solution - to help drivers 
                         find a right path in their professional career.  
-                    </CardSub>
-                </ContentAlt>
+                    </CardDescription>
+                </TextWrapper>
             </Card>
-            <MiddleCard>
-                <ContentAlt>
+            <Card>
+                <TextWrapper>
                     <Icon src={TrustIco}/>
                     <CardTitle>
                         WE BELIEVE IN TRUST
                     </CardTitle>
-                    <CardSub>
+                    <CardDescription>
                         We believe in what we do! That's why we are here to help you
-                        make right choices in your career.
-                        <span style={{ marginLeft: '5px'}}>
-                        We believe in you and we know
-                        how important is the work you do! 
-                        </span>
-                    </CardSub>
-                </ContentAlt>
-                <Content>
-                    <Image src={Trust} />
-                </Content>
-            </MiddleCard>
+                        make right choices in your career. We believe in you and we know
+                        how important is the work you do!
+                    </CardDescription>
+                </TextWrapper>
+                <ImageWrapper>
+                    <Image src={Trust}/>
+                </ImageWrapper>
+            </Card>
             <Card>
-                <Content>
+                <ImageWrapper>
                     <Image src={Care}/>
-                </Content>
-                <ContentAlt>
+                </ImageWrapper>
+                <TextWrapper>
                     <Icon src={CareIco}/>
                     <CardTitle>
                         WE CARE FOR OUR CLIENTS
                     </CardTitle>
-                    <CardSub>
+                    <CardDescription>
                         Our goal is to find the best match for our clients, because our clients are
                         our top priority.
-                        <span style={{ marginLeft: '5px'}}>
-                        Working with the top companies in Chicago area, 
-                        makes our job easier. 
-                        </span>
-                    </CardSub>
-                </ContentAlt>
+                        Working with the top companies in Chicago area,
+                        makes our job easier.
+                    </CardDescription>
+                </TextWrapper>
             </Card>
         </Container>
     );
 };
-
-export default CoreValues;

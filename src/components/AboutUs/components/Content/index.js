@@ -1,10 +1,10 @@
 import React from "react";
-import { Container, Header, TextContent } from "./style";
+import { Container, Title, TextContent } from "./style";
 
-const Content = () => {
+export const Content = () => {
     return (
         <Container>
-            <Header>ABOUT US</Header>
+            <Title>ABOUT US</Title>
             <TextContent>
                 We are Chicago, IL based company with a goal to help the trucking industry rise. 
                 With years of experience in trucking, marketing, and tech, and passion in all 
@@ -16,5 +16,3 @@ const Content = () => {
         </Container>
     );
 };
-
-export default Content;
