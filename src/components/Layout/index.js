@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
   html, body {
     padding: 0;
     font-family: ${fonts.main};
-    max-width: 1440px;
+    max-width: 100%;
     margin: 0 auto;
   }
 `;
