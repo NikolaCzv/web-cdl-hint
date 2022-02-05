@@ -17,7 +17,7 @@ import linkedin from '../../../../assets/icons/linkedin.svg';
 import { navigate } from "gatsby"
 import { FACEBOOK_LINK, LINKEDIN_LINK, INSTAGRAM_LINK } from "../../../../utils/constants"
 
-export const Footer = ({ toggleContactUs }) => {
+export const Footer = ({ toggleContactUs, toggleTermsAndConditions }) => {
   const handleSocialMediaUrl = (url) => () => window.open(url, "_blank");
 
     return(
@@ -35,7 +35,7 @@ export const Footer = ({ toggleContactUs }) => {
                 <Button onClick={() => navigate('/about-us')}>
                     ABOUT US
                 </Button>
-                <Button onClick={() => alert("TODO -> terms and conditions")}>
+                <Button onClick={toggleTermsAndConditions}>
                     TERMS & CONDITIONS
                 </Button>
                 <Button onClick={toggleContactUs}>
