@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { TopBanner, Footer, CoreValues, Video } from "../components/HomePage";
+import { TopBanner, Footer } from "../components/HomePage";
 import { Hero, Content } from "../components/AboutUs";
 import { ContactUsModal } from "../components/ContactUsModal";
 import { Layout } from "../components/Layout";
