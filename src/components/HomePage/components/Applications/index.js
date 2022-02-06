@@ -15,6 +15,7 @@ import { states } from '../../../../utils/states';
 import axios from 'axios';
 import { API_URL } from "../../../../utils/constants";
 import { notification } from 'antd';
+import checkPhone from 'phone';
 
 const INIT_DRIVER_APPLY = {
     firstName: null,
@@ -85,7 +86,23 @@ export const Applications = () => {
         });
     };
 
+    const openInvalidPhoneErrorNotification = () => {
+        notification.error({
+            message: 'Phone invalid',
+            duration: 3,
+            description:
+              'Your phone number is invalid. Please add valid format +1(312)833-6388.',
+        });
+    };
+
     const handleSubmit = async type => {
+        const isPhoneValid = checkPhone(driverData.phone || companyData.phone, { country: 'USA' });
+
+        if (!isPhoneValid.isValid) {
+            openInvalidPhoneErrorNotification();
+            return;
+        }
+
         setLoading(true);
         if(type === 'driver'){
             const data = {
@@ -156,7 +173,7 @@ export const Applications = () => {
                                 value={driverData.lastName}
                             />
                             <InputField 
-                                placeholder="Email Address" 
+                                placeholder="Email Address"
                                 onChange={e => handleOnChange('email', e, 'driver')}
                                 value={driverData.email}
                             />
