@@ -11,6 +11,14 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     'gatsby-plugin-antd',
     {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        includeInDevelopment: false,
+        id: 2830648,
+        sv: 6
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
