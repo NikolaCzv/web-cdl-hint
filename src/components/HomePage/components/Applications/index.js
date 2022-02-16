@@ -150,6 +150,15 @@ export const Applications = () => {
 
     return (
         <Container id='applications'>
+            {isDriverTab &&
+            <div>
+            <h2>We are here to help you find your next job!</h2>
+            <h2>
+                After submitting the application we will find 
+                a company that meets your expectations! Apply below!
+            </h2>
+            <br></br>
+            </div>}
             <Tab>
                 <TabButton selected={isDriverTab} onClick={() => setActiveTab(TABS.DRIVER)}>
                     DRIVER APPLICATION
