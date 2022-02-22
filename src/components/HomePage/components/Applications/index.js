@@ -8,24 +8,17 @@ import {
     InputFieldWrapper,
     InputField,
     ApplyButton,
-    selectStyle
 } from './style';
-import { Select } from 'antd';
-import { states } from '../../../../utils/states';
 import axios from 'axios';
 import { API_URL } from "../../../../utils/constants";
 import { notification } from 'antd';
 import checkPhone from 'phone';
+import illustrationUrl from "../../../../images/how-it-works.svg";
 
 const INIT_DRIVER_APPLY = {
     firstName: null,
     lastName: null,
-    email: null,
     phone: null,
-    cdlState: null,
-    trailerType: null,
-    driverType: null,
-    yearsOfExperience: null
 };
 
 const INIT_COMPANY_APPLY = {
@@ -45,7 +38,6 @@ export const Applications = () => {
     const [driverData, setDriverData] = useState(INIT_DRIVER_APPLY);
     const [activeTab, setActiveTab] = useState(TABS.DRIVER);
     const [loading, setLoading] = useState(false);
-    const { Option } = Select;
 
     const handleOnChange = (type, e, category) => {
         if(category === 'driver'){
@@ -59,13 +51,6 @@ export const Applications = () => {
                 [type]: e.target.value
             })
         }
-    };
-
-    const handleOnSelect = (type, value) => {
-        setDriverData({
-            ...driverData,
-            [type]: value
-        })
     };
 
     const openSuccessNotification = () => {
@@ -107,12 +92,7 @@ export const Applications = () => {
         if(type === 'driver'){
             const data = {
                 fullName: `${driverData.firstName} ${driverData.lastName}`,
-                email: driverData.email,
                 phone: driverData.phone,
-                cdlState: driverData.cdlState,
-                trailerType: driverData.trailerType,
-                driverType: driverData.driverType,
-                yearsOfExperience: driverData.yearsOfExperience,
                 appliedAt: new Date().toUTCString()
             };
 
@@ -150,15 +130,18 @@ export const Applications = () => {
 
     return (
         <Container id='applications'>
-            {isDriverTab &&
-            <div>
-            <h2>We are here to help you find your next job!</h2>
-            <h2>
-                After submitting the application we will find 
-                a company that meets your expectations! Apply below!
-            </h2>
-            <br></br>
-            </div>}
+            {isDriverTab && (
+              <div>
+                  <h2>We are here to help you find your next job!</h2>
+                  <h2>
+                      After submitting the application we will find
+                      a company that meets your expectations! Apply below!
+                  </h2>
+                  <img src={illustrationUrl} alt="How it works illustration" />
+                  <br />
+                  <br />
+              </div>
+            )}
             <Tab>
                 <TabButton selected={isDriverTab} onClick={() => setActiveTab(TABS.DRIVER)}>
                     DRIVER APPLICATION
@@ -182,70 +165,10 @@ export const Applications = () => {
                                 value={driverData.lastName}
                             />
                             <InputField 
-                                placeholder="Email Address"
-                                onChange={e => handleOnChange('email', e, 'driver')}
-                                value={driverData.email}
-                            />
-                            <InputField 
                                 placeholder="Phone Number"
                                 onChange={e => handleOnChange('phone', e, 'driver')}
                                 value={driverData.phone}
                             />
-                        </InputFieldWrapper>
-                        <InputFieldWrapper>
-                            <Select 
-                                style={selectStyle}
-                                placeholder="CDL State"
-                                size='large'
-                                onSelect={value => handleOnSelect('cdlState', value)}
-                                value={driverData.cdlState}
-                            >
-                                {states.map((state, index) => {
-                                    return (
-                                        <Option value={state.abbreviation} key={index}>
-                                            {state.abbreviation}
-                                        </Option>
-                                    );
-                                })}
-                            </Select>
-                            <Select 
-                                style={selectStyle}
-                                placeholder="Trailer Type"
-                                size='large'
-                                onSelect={value => handleOnSelect('trailerType', value)}
-                                value={driverData.trailerType}
-                            >
-                                <Option value="any">Any</Option>
-                                <Option value="doubles">Doubles</Option>
-                                <Option value="flatbed">Flatbed</Option>
-                                <Option value="reefer">Reefer</Option>
-                                <Option value="van">Van</Option>
-                            </Select>
-                            <Select 
-                                style={selectStyle}
-                                placeholder="Driver Type"
-                                size='large'
-                                onSelect={value => handleOnSelect('driverType', value)}
-                                value={driverData.driverType}
-                            >
-                                <Option value="any">Any</Option>
-                                <Option value="company">Company</Option>
-                                <Option value="owner">Owner</Option>
-                            </Select>
-                            <Select 
-                                style={selectStyle}
-                                placeholder="Years of Experience"
-                                size='large'
-                                onSelect={value => handleOnSelect('yearsOfExperience', value)}
-                                value={driverData.yearsOfExperience}
-                            >
-                                3 , 4+
-                                <Option value="0">Less Then 1</Option>
-                                <Option value="1">1</Option>
-                                <Option value="2">2</Option>
-                                <Option value="3">3</Option>
-                                <Option value="4">4+</Option>
-                            </Select>
                         </InputFieldWrapper>
                     </Form>
                     <ApplyButton disabled={loading} onClick={() => handleSubmit('driver')}>

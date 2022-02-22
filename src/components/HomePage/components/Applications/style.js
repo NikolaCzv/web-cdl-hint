@@ -2,11 +2,6 @@ import styled from 'styled-components';
 import { colors } from "../../../../utils/colors";
 import { Input } from 'antd';
 
-export const selectStyle = {
-  marginBottom: "20px",
-  width: '80%',
-};
-
 export const Container = styled.div`
     background-color: ${colors.grayBackground};
     padding: 50px;
